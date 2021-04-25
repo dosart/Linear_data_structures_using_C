@@ -34,11 +34,20 @@ typedef struct vector_t {
  *
  * @brief Construct new vector data structure
  *
- * @param size Size of vector
+ * @param size size of vector
  * if size == 0, set size = 16
  *
- * @return Pointer to the created vector
+ * @return vector data structure
  */
-vector_t *vector_make(size_t capacity);
+vector_t vector_make(size_t capacity);
+
+/**
+ * @ingroup vector
+ *
+ * @brief Free memory dynamic array
+ *
+ * @param vector pointer to vector
+ */
+void vector_free(vector_t *vector);
 
 #endif // LINEAR_DATA_STRUCTURES_USING_C_VECTOR_H
