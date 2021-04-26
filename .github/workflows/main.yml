@@ -29,9 +29,6 @@ jobs:
       - name: Check memory
         run: make check_source_file
       
-      - name: Check memory
-        run: check_memory_vector
-      
       - name: Code formatting
         run: make format
 
