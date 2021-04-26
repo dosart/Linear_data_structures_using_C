@@ -35,7 +35,7 @@ typedef struct vector_t {
  * @brief Construct new vector data structure
  *
  * @param capacity capacity of vector
- * if size == 0, set size = 16
+ * if capacity == 0, set capacity = 16
  *
  * @return vector data structure
  */
