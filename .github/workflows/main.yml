@@ -10,10 +10,30 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      
+      - name: Set up cppcheck
+        run: sudo apt-get install -y cppcheck
+      
+      - name: Set up CMake
+        run: sudo apt install cmake
+      
+      - name: Set up Valgrind
+        run: sudo apt-get install valgrind
 
       - name: Set up Doxygen
-        run: sudo apt-get install -y doxygen
+        run:  sudo apt-get install -y doxygen
+      
+      - name: Check source file
+        run : make check_source_file
+      
+      - name: Check memory
+        run: make check_source_file
+      
+      - name: Check memory
+        run: check_memory_vector
+      
+      - name: Code formatting
+        run: make format
 
       - name: Make docs
-        run: |
-          make docs
+        run:  make docs
