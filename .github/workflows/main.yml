@@ -1,4 +1,4 @@
-name: СШ
+name: CI
 
 on:
   - push
