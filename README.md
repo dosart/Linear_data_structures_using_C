@@ -1,5 +1,4 @@
 [![C CI](https://github.com/dosart/Linear_data_structures_using_C/actions/workflows/main.yml/badge.svg)](https://github.com/dosart/Linear_data_structures_using_C/actions/workflows/main.yml)
-
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/7fedc00712dd4d03b849d30c25736e31)](https://www.codacy.com/gh/dosart/Linear_data_structures_using_C/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=dosart/Linear_data_structures_using_C&amp;utm_campaign=Badge_Grade)
 
 # Linear_data_structures_using_C
