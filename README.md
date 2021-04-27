@@ -4,7 +4,7 @@
 # Linear data structures using C
 Implementation of classic linear data structures
 
-- ### Arrays
+- ## Arrays
     - [ ] Implement a vector (mutable array with automatic resizing):
         - [ ] size() - number of items
         - [ ] capacity() - number of items it can hold
@@ -19,7 +19,7 @@ Implementation of classic linear data structures
         - [ ] find(item) - looks for value and returns first index with that value, -1 if not found
         - [ ] resize(new_capacity) // private function
 
-- ### Linked Lists
+- ## Linked Lists
     - [ ] Implement (I did with tail pointer & without):
         - [ ] size() - returns number of data elements in list
         - [ ] empty() - bool returns true if empty
@@ -36,7 +36,7 @@ Implementation of classic linear data structures
         - [ ] reverse() - reverses the list
         - [ ] remove_value(value) - removes the first item in the list with this value
 
-- ### Queue
+- ## Queue
     - [ ] Implement using linked-list, with tail pointer:
         - [ ] enqueue(value) - adds value at position at tail
         - [ ] dequeue() - returns value and removes least recently added element (front)
