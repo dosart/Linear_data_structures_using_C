@@ -55,8 +55,8 @@ void test_vector_push_back1() {
   vector_t v;
   vector_init(&v, 0, sizeof(int));
 
-  int *x = malloc(sizeof(int) * 1);
-  vector_push_back(&v, (void *)x);
+  int x = 1;
+  vector_push_back(&v, (void *)&x);
 
   assert(v.size == 1);
   assert(v.capacity == 16);
@@ -70,10 +70,9 @@ void test_vector_push_back2() {
   vector_t v;
   vector_init(&v, 0, sizeof(int));
 
-  int *x = malloc(sizeof(int) * 1);
-  *x = 1;
-  vector_push_back(&v, (void *)x);
-  vector_push_back(&v, (void *)x);
+  int x = 1;
+  vector_push_back(&v, (void *)&x);
+  vector_push_back(&v, (void *)&x);
 
   assert(v.size == 2);
   assert(v.capacity == 16);
@@ -81,7 +80,6 @@ void test_vector_push_back2() {
   assert(*((int *)((char *)v.data + 1 * sizeof(int))) == 1);
 
   vector_free(&v);
-  free(x);
 }
 
 void test_vector_get1() {
