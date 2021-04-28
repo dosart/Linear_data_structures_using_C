@@ -7,7 +7,9 @@ This file contains the definition of the data structure dynamic array
 #ifndef LINEAR_DATA_STRUCTURES_USING_C_VECTOR_H
 #define LINEAR_DATA_STRUCTURES_USING_C_VECTOR_H
 
+#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * \defgroup vector Dynamic array
@@ -24,9 +26,10 @@ This file contains the definition of the data structure dynamic array
  *
  */
 typedef struct vector_t {
-  int *data;
+  void *data;
   size_t size;
   size_t capacity;
+  size_t elem_size;
 } vector_t;
 
 /**
@@ -34,20 +37,45 @@ typedef struct vector_t {
  *
  * @brief Construct new vector data structure
  *
+ * @param v pointer to vector data structure
  * @param capacity capacity of vector
  * if size == 0, set size = 16
+ * @param elem_size Size of vector item
+ *
  *
  * @return vector data structure
  */
-vector_t vector_make(size_t capacity);
+void vector_init(vector_t *v, size_t capacity, size_t elem_size);
 
 /**
  * @ingroup vector
  *
  * @brief Free memory dynamic array
  *
- * @param vector pointer to vector
+ * @param v pointer to vector
  */
-void vector_free(vector_t *vector);
+void vector_free(vector_t *v);
+
+/**
+ * @ingroup vector
+ *
+ * @brief Adds an item to the end
+ *
+ * @param v pointer to vector data structure
+ * @param elem element for add
+ */
+void vector_push_back(vector_t *v, void *elem);
+
+/**
+ * @ingroup vector
+ *
+ * @brief Returns item at given index
+ *
+ * @param v pointer to vector data structure
+ * @param elem element for add
+ *
+ * @return item at given index
+ */
+void *vector_get(vector_t *v, size_t index);
 
 #endif // LINEAR_DATA_STRUCTURES_USING_C_VECTOR_H
