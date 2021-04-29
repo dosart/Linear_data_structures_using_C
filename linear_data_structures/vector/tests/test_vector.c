@@ -17,6 +17,11 @@ void test_vector_get2();
 void test_vector_set1();
 void test_vector_set2();
 
+void test_vector_find1();
+void test_vector_find2();
+void test_vector_find3();
+void test_vector_find4();
+
 int main() {
   test_vector_init_zero_size();
   test_vector_init();
@@ -29,6 +34,11 @@ int main() {
 
   test_vector_set1();
   test_vector_set2();
+
+  test_vector_find1();
+  test_vector_find2();
+  test_vector_find3();
+  test_vector_find4();
 }
 
 void test_vector_init_zero_size() {
@@ -153,6 +163,79 @@ void test_vector_set2() {
   vector_init(&v, 0, sizeof(int));
 
   assert(vector_get(&v, 10) == NULL);
+
+  vector_free(&v);
+}
+
+int test_cmp(void *x, void *y) {
+  int ix = *(int *)x;
+  int iy = *(int *)y;
+
+  return ix == iy;
+}
+
+void test_vector_find1() {
+  printf("test_vector_find1\n");
+  int args[3] = {0, 1, 2};
+
+  vector_t v;
+  vector_init(&v, 0, sizeof(int));
+
+  vector_push_back(&v, (void *)&args[0]);
+  vector_push_back(&v, (void *)&args[1]);
+  vector_push_back(&v, (void *)&args[2]);
+  int key = 0;
+
+  assert(vector_find(&v, (void *)&key, test_cmp) == 0);
+
+  vector_free(&v);
+}
+void test_vector_find2() {
+  printf("test_vector_find2\n");
+  int args[3] = {0, 1, 2};
+
+  vector_t v;
+  vector_init(&v, 0, sizeof(int));
+
+  vector_push_back(&v, (void *)&args[0]);
+  vector_push_back(&v, (void *)&args[1]);
+  vector_push_back(&v, (void *)&args[2]);
+  int key = 1;
+
+  assert(vector_find(&v, (void *)&key, test_cmp) == 1);
+
+  vector_free(&v);
+}
+
+void test_vector_find3() {
+  printf("test_vector_find3\n");
+  int args[3] = {0, 1, 2};
+
+  vector_t v;
+  vector_init(&v, 0, sizeof(int));
+
+  vector_push_back(&v, (void *)&args[0]);
+  vector_push_back(&v, (void *)&args[1]);
+  vector_push_back(&v, (void *)&args[2]);
+  int key = 2;
+
+  assert(vector_find(&v, (void *)&key, test_cmp) == 2);
+
+  vector_free(&v);
+}
+void test_vector_find4() {
+  printf("test_vector_find4\n");
+  int args[3] = {0, 1, 2};
+
+  vector_t v;
+  vector_init(&v, 0, sizeof(int));
+
+  vector_push_back(&v, (void *)&args[0]);
+  vector_push_back(&v, (void *)&args[1]);
+  vector_push_back(&v, (void *)&args[2]);
+  int key = 3;
+
+  assert(vector_find(&v, (void *)&key, test_cmp) == -1);
 
   vector_free(&v);
 }

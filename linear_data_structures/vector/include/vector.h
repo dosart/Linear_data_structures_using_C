@@ -120,4 +120,16 @@ size_t vector_size(vector_t *v);
  */
 size_t vector_is_empty(vector_t *v);
 
+/**
+ * @ingroup vector
+ *
+ * @brief Returns index of find element. Returns -1 if key is not found.
+ *
+ * @param v pointer to vector data structure
+ * @param key key for search
+ *
+ * @return capacity of vector
+ */
+long long vector_find(vector_t *v, void *key, int (*cmp)(void *, void *));
+
 #endif // LINEAR_DATA_STRUCTURES_USING_C_VECTOR_H

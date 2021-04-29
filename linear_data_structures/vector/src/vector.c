@@ -67,3 +67,15 @@ size_t vector_is_empty(vector_t *v) {
   }
   return 0;
 }
+
+long long vector_find(vector_t *v, void *key, int (*cmp)(void *, void *)) {
+  if (v != NULL) {
+    for (size_t i = 0; i < v->size; i++) {
+      void *current = (char *)v->data + i * v->elem_size;
+      if (cmp(current, key))
+        return i;
+    }
+    return -1;
+  }
+  return -1;
+}
