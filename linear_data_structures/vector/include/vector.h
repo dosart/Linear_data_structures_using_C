@@ -38,8 +38,9 @@ typedef struct vector_t {
  * @brief Construct new vector data structure
  *
  * @param v pointer to vector data structure
- * @param capacity capacity of vector
- * if size == 0, set size = 16
+ * @param capacity the size of the storage space currently allocated for the
+ * vector, expressed in terms of elements. if capacity == 0, set capacity = 16
+ * on first addition
  * @param elem_size Size of vector item
  *
  *
@@ -77,5 +78,18 @@ void vector_push_back(vector_t *v, void *elem);
  * @return item at given index
  */
 void *vector_get(vector_t *v, size_t index);
+
+/**
+ * @ingroup vector
+ *
+ * @brief Change element by index
+ *
+ * @param v pointer to vector data structure
+ * @param index index for change element
+ * @param elem element for change
+ *
+ * @return item at given index
+ */
+void vector_set(vector_t *v, size_t index, void *elem);
 
 #endif // LINEAR_DATA_STRUCTURES_USING_C_VECTOR_H

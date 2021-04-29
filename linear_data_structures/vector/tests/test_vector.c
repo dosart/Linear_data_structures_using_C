@@ -14,6 +14,9 @@ void test_vector_push_back2();
 void test_vector_get1();
 void test_vector_get2();
 
+void test_vector_set1();
+void test_vector_set2();
+
 int main() {
   test_vector_init_zero_size();
   test_vector_init();
@@ -23,6 +26,9 @@ int main() {
 
   test_vector_get1();
   test_vector_get2();
+
+  test_vector_set1();
+  test_vector_set2();
 }
 
 void test_vector_init_zero_size() {
@@ -109,4 +115,37 @@ void test_vector_get2() {
   assert(item == NULL);
 
   vector_free(&v);
+}
+
+void test_vector_set1() {
+  printf("test_vector_set1\n");
+
+  vector_t v;
+  vector_init(&v, 0, sizeof(int));
+  int one = 1;
+  int two = 2;
+  vector_push_back(&v,(void *)&one);
+  vector_push_back(&v,(void *)&two);
+
+  one += 1;
+  two += 1;
+  vector_set(&v, 0, (void *)&(one));
+  vector_set(&v, 1, (void *)&(two));
+
+  assert( *(int*)vector_get(&v, 0) == one);
+  assert( *(int*)vector_get(&v, 1) == two);
+
+  vector_free(&v);
+}
+
+void test_vector_set2()
+{
+    printf("test_vector_set2\n");
+
+    vector_t v;
+    vector_init(&v, 0, sizeof(int));
+
+    assert(vector_get(&v, 10) == NULL);
+
+    vector_free(&v);
 }

@@ -20,7 +20,7 @@ void vector_free(vector_t *vector) {
 static void vector_resize(vector_t *v, size_t capacity) {
   if (capacity == 0)
     capacity = 16;
-  v->data = realloc(v->data, elem_size * capacity);
+  v->data = realloc(v->data, v->elem_size * capacity);
   v->capacity = capacity;
 }
 
@@ -44,4 +44,12 @@ void *vector_get(vector_t *v, size_t index) {
     }
   }
   return NULL;
+}
+
+void vector_set(vector_t *v, size_t index, void *elem) {
+  if (v != NULL) {
+    if (index < v->size) {
+        set_item(v, index, elem);
+    }
+  }
 }
