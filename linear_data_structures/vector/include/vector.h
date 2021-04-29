@@ -38,9 +38,15 @@ typedef struct vector_t {
  * @brief Construct new vector data structure
  *
  * @param v pointer to vector data structure
+<<<<<<< HEAD
  * @param capacity the size of the storage space currently allocated for the
  * vector, expressed in terms of elements. if capacity == 0, set capacity = 16
  * on first addition
+=======
+ * @param capacity the size of the storage space currently allocated for the
+vector, expressed in terms of elements.
+ * if capacity == 0, set capacity = 16 on first addition
+>>>>>>> d3cfc522b3c470da1a67e1de7fa50ed4377d48a2
  * @param elem_size Size of vector item
  *
  *

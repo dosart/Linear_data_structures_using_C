@@ -49,7 +49,7 @@ void *vector_get(vector_t *v, size_t index) {
 void vector_set(vector_t *v, size_t index, void *elem) {
   if (v != NULL) {
     if (index < v->size) {
-        set_item(v, index, elem);
+      set_item(v, index, elem);
     }
   }
 }
