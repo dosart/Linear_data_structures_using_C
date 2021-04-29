@@ -20,7 +20,7 @@ void vector_free(vector_t *vector) {
 static void vector_resize(vector_t *v, size_t capacity) {
   if (capacity == 0)
     capacity = 16;
-  v->data = realloc(v->data, sizeof(void *) * capacity);
+  v->data = realloc(v->data, elem_size * capacity);
   v->capacity = capacity;
 }
 
