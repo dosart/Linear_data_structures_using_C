@@ -38,6 +38,8 @@ void test_vector_init_zero_size() {
   vector_init(&v, 0, 0);
 
   assert(v.size == 0);
+  assert(vector_size(&v) == 0);
+  assert(vector_is_empty(&v) == 1);
   assert(v.capacity == 0);
 
   vector_free(&v);
@@ -50,6 +52,8 @@ void test_vector_init() {
   vector_init(&v, 16, 0);
 
   assert(v.size == 0);
+  assert(vector_size(&v) == 0);
+  assert(vector_is_empty(&v) == 1);
   assert(v.capacity == 16);
 
   vector_free(&v);
@@ -65,6 +69,8 @@ void test_vector_push_back1() {
   vector_push_back(&v, (void *)&x);
 
   assert(v.size == 1);
+  assert(vector_is_empty(&v) == 0);
+  assert(vector_size(&v) == 1);
   assert(v.capacity == 16);
 
   vector_free(&v);
@@ -81,6 +87,8 @@ void test_vector_push_back2() {
   vector_push_back(&v, (void *)&x);
 
   assert(v.size == 2);
+  assert(vector_is_empty(&v) == 0);
+  assert(vector_size(&v) == 2);
   assert(v.capacity == 16);
   assert(*((int *)((char *)v.data + 0 * sizeof(int))) == 1);
   assert(*((int *)((char *)v.data + 1 * sizeof(int))) == 1);

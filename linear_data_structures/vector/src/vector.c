@@ -53,3 +53,17 @@ void vector_set(vector_t *v, size_t index, void *elem) {
     }
   }
 }
+
+size_t vector_size(vector_t *v) {
+  if (v != NULL) {
+    return v->size;
+  }
+  return 0;
+}
+
+size_t vector_is_empty(vector_t *v) {
+  if (v != NULL) {
+    return v->size == 0 ? 1 : 0;
+  }
+  return 0;
+}

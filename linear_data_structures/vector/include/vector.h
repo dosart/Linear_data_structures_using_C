@@ -98,4 +98,26 @@ void *vector_get(vector_t *v, size_t index);
  */
 void vector_set(vector_t *v, size_t index, void *elem);
 
+/**
+ * @ingroup vector
+ *
+ * @brief Returns size of vector (expressed in terms of elements)
+ *
+ * @param v pointer to vector data structure
+ *
+ * @return size of vector
+ */
+size_t vector_size(vector_t *v);
+
+/**
+ * @ingroup vector
+ *
+ * @brief Returns true if vector is empty (expressed in terms of elements)
+ *
+ * @param v pointer to vector data structure
+ *
+ * @return 1 if size == 0 else 0
+ */
+size_t vector_is_empty(vector_t *v);
+
 #endif // LINEAR_DATA_STRUCTURES_USING_C_VECTOR_H
