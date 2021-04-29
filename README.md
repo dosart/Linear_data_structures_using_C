@@ -3,3 +3,8 @@
 
 # Linear data structures using C
 Implementation of classic linear data structures
+
+## Vector(Dynamic array)
+
+- [x] vector_get - returns item at given index, NULL if index out of bounds
+- [x] vector_push_back - adds an element to the end
