@@ -1,6 +1,8 @@
 [![C CI](https://github.com/dosart/Linear_data_structures_using_C/actions/workflows/main.yml/badge.svg)](https://github.com/dosart/Linear_data_structures_using_C/actions/workflows/main.yml)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/7fedc00712dd4d03b849d30c25736e31)](https://www.codacy.com/gh/dosart/Linear_data_structures_using_C/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=dosart/Linear_data_structures_using_C&amp;utm_campaign=Badge_Grade) ![cppcheck-action](https://github.com/stepin654321/MiniProject_Template/workflows/cppcheck-action/badge.svg) ![Valgrind](https://github.com/stepin654321/MiniProject_Template/workflows/Valgrind/badge.svg)
 
+The project was made as part of the [Coding Interview University](https://github.com/Ilyushin/google-interview-university) course.
+
 # Linear data structures using C
 Implementation of classic linear data structures
 
@@ -8,3 +10,6 @@ Implementation of classic linear data structures
 
 - [x] vector_get - returns item at given index, NULL if index out of bounds
 - [x] ector_push_back - adds an element to the end
+- [x] is_empty() 
+- [x] capacity() - number of items it can hold
+- [x] size() - number of items
