@@ -9,7 +9,7 @@ Implementation of classic linear data structures
 ## Vector(Dynamic array)
 
 - [x] vector_get - returns item at given index, NULL if index out of bounds
-- [x] ector_push_back - adds an element to the end
-- [x] is_empty() 
-- [x] capacity() - number of items it can hold
-- [x] size() - number of items
+- [x] vector_push_back - adds an element to the end
+- [x] vector_is_empty() 
+- [x] vector_capacity() - number of items it can hold
+- [x] vector_size() - number of items
