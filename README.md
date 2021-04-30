@@ -13,3 +13,4 @@ Implementation of classic linear data structures
 - [x] vector_is_empty() 
 - [x] vector_capacity() - number of items it can hold
 - [x] vector_size() - number of items
+- [x] vector_resize(new_capacity) // private function
