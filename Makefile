@@ -1,6 +1,6 @@
 
 check_memory_vector: test_vector
-	cd linear_data_structures/vector/build && valgrind --leak-check=full --leak-resolution=med test
+	cd linear_data_structures/vector/build && valgrind --leak-check=full --leak-resolution=med ./test
 
 test_vector:
 	cd linear_data_structures/vector/build && cmake .. && make && ./test

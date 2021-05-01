@@ -1582,7 +1582,7 @@ FORMULA_FONTSIZE       = 10
 # generated for formulas are transparent PNGs. Transparent PNGs are not
 # supported properly for IE 6.0, but are supported on all modern browsers.
 #
-# Note that when changing this option you need to delete any form_*.png files in
+# Note that when changing this option you need to test_delete any form_*.png files in
 # the HTML output directory before the changes have effect.
 # The default value is: YES.
 # This tag requires that the tag GENERATE_HTML is set to YES.

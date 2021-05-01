@@ -42,17 +42,46 @@ static void copy(vector_t *v, size_t destination_index, size_t source_index) {
          (char *)v->data + source_index * v->elem_size, v->elem_size);
 }
 
+static void *get_item(vector_t *v, size_t index) {
+  return (char *)v->data + index * v->elem_size;
+}
+
+static void shift_left(vector_t *v, size_t index_start) {
+  for (size_t i = index_start; i < v->size; ++i) {
+    copy(v, i, i + 1);
+  }
+}
+
+static void maybe_reduce_capacity(vector_t *v) {
+  if (v->size > 0 && v->size == v->capacity / 4)
+    vector_resize(v, v->capacity / 2);
+}
+
+void vector_delete_by_value(vector_t *v, void *key, int (*cmp)(void *, void *),
+                            void (*delete)(void *)) {
+  if (v != NULL) {
+    long long start_index_for_delete = vector_find(v, key, cmp);
+    if (start_index_for_delete == -1)
+      return;
+    size_t i = start_index_for_delete;
+    while (i < v->size) {
+      if (cmp(key, get_item(v, i)))
+        delete (get_item(v, i));
+      i++;
+    }
+    v->size--;
+    shift_left(v, start_index_for_delete);
+    maybe_reduce_capacity(v);
+  }
+}
+
 void vector_delete_by_index(vector_t *v, size_t index, void (*delete)(void *)) {
   if (v != NULL) {
     if (index < v->size) {
-      for (size_t i = 0; i < v->size; ++i) {
-        delete ((char *)v->data + i * v->elem_size);
-        // v->data[i] = v->data[i + 1]
-        copy(v, i, i + 1);
-      }
+      delete (get_item(v, index));
       v->size--;
-      if (v->size > 0 && v->size == v->capacity / 4)
-        vector_resize(v, v->capacity / 2);
+      shift_left(v, index);
+      maybe_reduce_capacity(v);
     }
   }
 }

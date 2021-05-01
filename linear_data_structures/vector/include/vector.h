@@ -70,12 +70,15 @@ void vector_push_back(vector_t *v, void *elem);
 /**
  * @ingroup vector
  *
- * @brief Delete item at index, shifting all trailing elements left
+ * @brief Delete item by value, shifting all trailing elements left
  *
  * @param v pointer to vector data structure
  * @param index index for delete
+ * @param cmp a function that takes two arguments. Returns 1 if the elements are
+ * @param deleter function to remove an item
  */
-void vector_delete_by_value(vector_t *v, void *key, int (*cmp)(void *, void *));
+void vector_delete_by_value(vector_t *v, void *key, int (*cmp)(void *, void *),
+                            void (*deleter)(void *));
 
 /**
  * @ingroup vector
@@ -84,6 +87,7 @@ void vector_delete_by_value(vector_t *v, void *key, int (*cmp)(void *, void *));
  *
  * @param v pointer to vector data structure
  * @param index index for delete
+ * @param deleter function to remove an item
  */
 void vector_delete_by_index(vector_t *v, size_t index, void (*deleter)(void *));
 
