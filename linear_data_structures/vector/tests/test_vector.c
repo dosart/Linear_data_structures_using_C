@@ -245,6 +245,8 @@ void test_vector_find4() {
   vector_free(&v);
 }
 
+void delete (void *key) { *(int *)key = 0; }
+
 void test_vector_delete_by_index1() {
   printf("test_vector_delete_by_index1\n");
   int args[3] = {0, 1, 2};
@@ -256,7 +258,7 @@ void test_vector_delete_by_index1() {
   vector_push_back(&v, (void *)&args[1]);
   vector_push_back(&v, (void *)&args[2]);
 
-  vector_delete_by_index(&v, 0);
+  vector_delete_by_index(&v, 0, delete);
 
   assert(v.size == 2);
   assert(vector_is_empty(&v) == 0);
@@ -276,7 +278,7 @@ void test_vector_delete_by_index2() {
   vector_push_back(&v, (void *)&args[1]);
   vector_push_back(&v, (void *)&args[2]);
 
-  vector_delete_by_index(&v, 1);
+  vector_delete_by_index(&v, 1, delete);
 
   assert(v.size == 2);
   assert(vector_is_empty(&v) == 0);
@@ -296,7 +298,7 @@ void test_vector_delete_by_index3() {
   vector_push_back(&v, (void *)&args[1]);
   vector_push_back(&v, (void *)&args[2]);
 
-  vector_delete_by_index(&v, 2);
+  vector_delete_by_index(&v, 2, delete);
 
   assert(v.size == 2);
   assert(vector_is_empty(&v) == 0);
@@ -316,7 +318,7 @@ void test_vector_delete_by_index4() {
   vector_push_back(&v, (void *)&args[1]);
   vector_push_back(&v, (void *)&args[2]);
 
-  vector_delete_by_index(&v, 10);
+  vector_delete_by_index(&v, 10, delete);
 
   assert(v.size == 3);
   assert(vector_is_empty(&v) == 0);

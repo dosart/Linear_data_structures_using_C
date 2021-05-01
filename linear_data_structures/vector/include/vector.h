@@ -75,7 +75,17 @@ void vector_push_back(vector_t *v, void *elem);
  * @param v pointer to vector data structure
  * @param index index for delete
  */
-void vector_delete_by_index(vector_t *v, size_t index);
+void vector_delete_by_value(vector_t *v, void *key, int (*cmp)(void *, void *));
+
+/**
+ * @ingroup vector
+ *
+ * @brief Delete item at index, shifting all trailing elements left
+ *
+ * @param v pointer to vector data structure
+ * @param index index for delete
+ */
+void vector_delete_by_index(vector_t *v, size_t index, void (*deleter)(void *));
 
 /**
  * @ingroup vector

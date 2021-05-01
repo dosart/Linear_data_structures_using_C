@@ -42,10 +42,11 @@ static void copy(vector_t *v, size_t destination_index, size_t source_index) {
          (char *)v->data + source_index * v->elem_size, v->elem_size);
 }
 
-void vector_delete_by_index(vector_t *v, size_t index) {
+void vector_delete_by_index(vector_t *v, size_t index, void (*delete)(void *)) {
   if (v != NULL) {
     if (index < v->size) {
       for (size_t i = 0; i < v->size; ++i) {
+        delete ((char *)v->data + i * v->elem_size);
         // v->data[i] = v->data[i + 1]
         copy(v, i, i + 1);
       }
