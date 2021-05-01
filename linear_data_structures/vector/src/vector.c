@@ -9,8 +9,15 @@ void vector_init(vector_t *v, size_t capacity, size_t elem_size) {
   }
 }
 
-void vector_free(vector_t *vector) {
+static void *get_item(vector_t *v, size_t index) {
+  return (char *)v->data + index * v->elem_size;
+}
+
+void vector_free(vector_t *vector, void (*deleter)(void *)) {
   if (vector != NULL) {
+    for (size_t i = 0; i < vector->size; ++i) {
+      deleter(get_item(vector, i));
+    }
     free(vector->data);
     vector->capacity = 0;
     vector->size = 0;
@@ -40,10 +47,6 @@ void vector_push_back(vector_t *v, void *elem) {
 static void copy(vector_t *v, size_t destination_index, size_t source_index) {
   memcpy((char *)v->data + destination_index * v->elem_size,
          (char *)v->data + source_index * v->elem_size, v->elem_size);
-}
-
-static void *get_item(vector_t *v, size_t index) {
-  return (char *)v->data + index * v->elem_size;
 }
 
 static void shift_left(vector_t *v, size_t index_start) {
