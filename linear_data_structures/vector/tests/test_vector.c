@@ -22,6 +22,11 @@ void test_vector_find2();
 void test_vector_find3();
 void test_vector_find4();
 
+void test_vector_delete_by_index1();
+void test_vector_delete_by_index2();
+void test_vector_delete_by_index3();
+void test_vector_delete_by_index4();
+
 int main() {
   test_vector_init_zero_size();
   test_vector_init();
@@ -238,4 +243,89 @@ void test_vector_find4() {
   assert(vector_find(&v, (void *)&key, test_cmp) == -1);
 
   vector_free(&v);
+}
+
+void test_vector_delete_by_index1() {
+  printf("test_vector_delete_by_index1\n");
+  int args[3] = {0, 1, 2};
+
+  vector_t v;
+  vector_init(&v, 0, sizeof(int));
+
+  vector_push_back(&v, (void *)&args[0]);
+  vector_push_back(&v, (void *)&args[1]);
+  vector_push_back(&v, (void *)&args[2]);
+
+  vector_delete_by_index(&v, 0);
+
+  assert(v.size == 2);
+  assert(vector_is_empty(&v) == 0);
+  int key = 0;
+  assert(vector_find(&v, (void *)&key, test_cmp) == -1);
+
+  vector_free(&v);
+}
+void test_vector_delete_by_index2() {
+    printf("test_vector_delete_by_index2\n");
+    int args[3] = {0, 1, 2};
+
+    vector_t v;
+    vector_init(&v, 0, sizeof(int));
+
+    vector_push_back(&v, (void *)&args[0]);
+    vector_push_back(&v, (void *)&args[1]);
+    vector_push_back(&v, (void *)&args[2]);
+
+    vector_delete_by_index(&v, 1);
+
+    assert(v.size == 2);
+    assert(vector_is_empty(&v) == 0);
+    int key = 1;
+    assert(vector_find(&v, (void *)&key, test_cmp) == -1);
+
+    vector_free(&v);
+}
+void test_vector_delete_by_index3() {
+    printf("test_vector_delete_by_index3\n");
+    int args[3] = {0, 1, 2};
+
+    vector_t v;
+    vector_init(&v, 0, sizeof(int));
+
+    vector_push_back(&v, (void *)&args[0]);
+    vector_push_back(&v, (void *)&args[1]);
+    vector_push_back(&v, (void *)&args[2]);
+
+    vector_delete_by_index(&v, 2);
+
+    assert(v.size == 2);
+    assert(vector_is_empty(&v) == 0);
+    int key = 2;
+    assert(vector_find(&v, (void *)&key, test_cmp) == -1);
+
+    vector_free(&v);
+}
+void test_vector_delete_by_index4() {
+    printf("test_vector_delete_by_index4\n");
+    int args[3] = {0, 1, 2};
+
+    vector_t v;
+    vector_init(&v, 0, sizeof(int));
+
+    vector_push_back(&v, (void *)&args[0]);
+    vector_push_back(&v, (void *)&args[1]);
+    vector_push_back(&v, (void *)&args[2]);
+
+    vector_delete_by_index(&v, 10);
+
+    assert(v.size == 3);
+    assert(vector_is_empty(&v) == 0);
+    int key0 = 0;
+    int key1 = 1;
+    int key2 = 2;
+    assert(vector_find(&v, (void *)&key0, test_cmp) == 0);
+    assert(vector_find(&v, (void *)&key1, test_cmp) == 1);
+    assert(vector_find(&v, (void *)&key2, test_cmp) == 2);
+
+    vector_free(&v);
 }

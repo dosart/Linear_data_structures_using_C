@@ -38,8 +38,9 @@ typedef struct vector_t {
  * @brief Construct new vector data structure
  *
  * @param v pointer to vector data structure
- * @param capacity the size of the storage space currently allocated for the vector, expressed in terms of elements.
- * if capacity == 0, set capacity = 16 on first addition
+ * @param capacity the size of the storage space currently allocated for the
+ * vector, expressed in terms of elements. if capacity == 0, set capacity = 16
+ * on first addition
  *
  * @param elem_size Size of vector item
  *
@@ -65,6 +66,16 @@ void vector_free(vector_t *v);
  * @param elem element for add
  */
 void vector_push_back(vector_t *v, void *elem);
+
+/**
+ * @ingroup vector
+ *
+ * @brief Delete item at index, shifting all trailing elements left
+ *
+ * @param v pointer to vector data structure
+ * @param index index for delete
+ */
+void vector_delete_by_index(vector_t *v, size_t index);
 
 /**
  * @ingroup vector
@@ -120,7 +131,8 @@ size_t vector_is_empty(vector_t *v);
  *
  * @param v pointer to vector data structure
  * @param key key for search
- * @param cmp a function that takes two arguments. Returns 1 if the elements are equal, otherwise 0
+ * @param cmp a function that takes two arguments. Returns 1 if the elements are
+ * equal, otherwise 0
  *
  * @return capacity of vector
  */

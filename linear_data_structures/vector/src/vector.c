@@ -33,7 +33,26 @@ void vector_push_back(vector_t *v, void *elem) {
     if (v->size == v->capacity)
       vector_resize(v, v->capacity * 2);
     set_item(v, v->size, elem);
-    v->size += 1;
+    v->size++;
+  }
+}
+
+static void copy(vector_t *v, size_t destination_index, size_t source_index) {
+  memcpy((char *)v->data + destination_index * v->elem_size,
+         (char *)v->data + source_index * v->elem_size, v->elem_size);
+}
+
+void vector_delete_by_index(vector_t *v, size_t index) {
+  if (v != NULL) {
+    if (index < v->size) {
+      for (size_t i = 0; i < v->size; ++i) {
+        // v->data[i] = v->data[i + 1]
+        copy(v, i, i + 1);
+      }
+      v->size--;
+      if (v->size > 0 && v->size == v->capacity / 4)
+        vector_resize(v, v->capacity / 2);
+    }
   }
 }
 
