@@ -1,6 +1,9 @@
 
-check_memory_vector: test_vector
-	cd linear_data_structures/vector/build && valgrind --leak-check=full --leak-resolution=med ./test
+check_memory_vector: build_exist test_vector
+	cd ./linear_data_structures/vector/build && valgrind --leak-check=full --leak-resolution=med ./test
+
+build_exist:
+	if [ ! -d "./linear_data_structures/vector/build" ]; then mkdir "./linear_data_structures/vector/build"; fi
 
 test_vector:
 	cd linear_data_structures/vector/build && cmake .. && make && ./test
