@@ -71,6 +71,17 @@ void vector_push_back(vector_t *v, void *elem);
 /**
  * @ingroup vector
  *
+ * @brief Adds an item  by index
+ *
+ * @param v pointer to vector data structure
+ * @param index index for added
+ * @param elem element for add
+ */
+void vector_insert_by_index(vector_t *v, size_t index, void *elem);
+
+/**
+ * @ingroup vector
+ *
  * @brief Delete item by value, shifting all trailing elements left
  *
  * @param v pointer to vector data structure

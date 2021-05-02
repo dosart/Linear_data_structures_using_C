@@ -45,8 +45,24 @@ void vector_push_back(vector_t *v, void *elem) {
 }
 
 static void copy(vector_t *v, size_t destination_index, size_t source_index) {
-  memcpy((char *)v->data + destination_index * v->elem_size,
-         (char *)v->data + source_index * v->elem_size, v->elem_size);
+    memcpy((char *)v->data + destination_index * v->elem_size,
+           (char *)v->data + source_index * v->elem_size, v->elem_size);
+}
+
+void vector_insert_by_index(vector_t *v, size_t index, void *elem) {
+    if (v != NULL) {
+        if (index > v->size)
+            return;
+        if (v->size == v->capacity)
+            vector_resize(v, v->capacity * 2);
+        long long size = v->size;
+        long long _index = index;
+        for (long long i = size - 1; i >= _index; --i)
+            //v->data[i + 1] = v->data[i]
+            copy(v, i + 1, i);
+        set_item(v, index, elem);
+        v->size++;
+    }
 }
 
 static void shift_left(vector_t *v, size_t index_start) {

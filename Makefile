@@ -5,7 +5,7 @@ check_memory_vector: build_exist test_vector
 build_exist:
 	if [ ! -d "./linear_data_structures/vector/build" ]; then mkdir "./linear_data_structures/vector/build"; fi
 
-test_vector:
+test_vector: build_exist
 	cd linear_data_structures/vector/build && cmake .. && make && ./test
 
 check_source_file:
