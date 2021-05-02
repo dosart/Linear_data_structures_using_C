@@ -38,6 +38,4 @@ void test_vector_insert_by_index3();
 void test_vector_insert_by_index4();
 void test_vector_insert_by_index5();
 
-
-
-#endif //LINEAR_DATA_STRUCTURES_USING_C_TEST_VECTOR_H
+#endif // LINEAR_DATA_STRUCTURES_USING_C_TEST_VECTOR_H

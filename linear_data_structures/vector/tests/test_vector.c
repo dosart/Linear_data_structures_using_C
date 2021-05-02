@@ -37,11 +37,11 @@ int main() {
   test_vector_delete_by_value3();
   test_vector_delete_by_value4();
 
-    test_vector_insert_by_index1();
-    test_vector_insert_by_index2();
-    test_vector_insert_by_index3();
-    test_vector_insert_by_index4();
-    test_vector_insert_by_index5();
+  test_vector_insert_by_index1();
+  test_vector_insert_by_index2();
+  test_vector_insert_by_index3();
+  test_vector_insert_by_index4();
+  test_vector_insert_by_index5();
 }
 
 void test_vector_init_zero_size() {
@@ -439,134 +439,133 @@ void test_vector_delete_by_value4() {
 }
 
 void test_vector_insert_by_index1() {
-    printf("test_vector_insert_by_index1\n");
-    int args[3] = {0, 1, 2};
+  printf("test_vector_insert_by_index1\n");
+  int args[3] = {0, 1, 2};
 
-    vector_t v;
-    vector_init(&v, 0, sizeof(int));
+  vector_t v;
+  vector_init(&v, 0, sizeof(int));
 
-    vector_push_back(&v, (void *)&args[0]);
-    vector_push_back(&v, (void *)&args[1]);
-    vector_push_back(&v, (void *)&args[2]);
+  vector_push_back(&v, (void *)&args[0]);
+  vector_push_back(&v, (void *)&args[1]);
+  vector_push_back(&v, (void *)&args[2]);
 
-    int item = 100;
-    vector_insert_by_index(&v, 1, (void *)&item);
+  int item = 100;
+  vector_insert_by_index(&v, 1, (void *)&item);
 
-    assert(v.size == 4);
-    assert(vector_is_empty(&v) == 0);
-    int key0 = 0;
-    int key1 = 1;
-    int key2 = 2;
-    assert(vector_find(&v, (void *)&key0, test_cmp) == 0);
-    assert(vector_find(&v, (void *)&key1, test_cmp) == 2);
-    assert(vector_find(&v, (void *)&key2, test_cmp) == 3);
-    assert(vector_find(&v, (void *)&item, test_cmp) == 1);
+  assert(v.size == 4);
+  assert(vector_is_empty(&v) == 0);
+  int key0 = 0;
+  int key1 = 1;
+  int key2 = 2;
+  assert(vector_find(&v, (void *)&key0, test_cmp) == 0);
+  assert(vector_find(&v, (void *)&key1, test_cmp) == 2);
+  assert(vector_find(&v, (void *)&key2, test_cmp) == 3);
+  assert(vector_find(&v, (void *)&item, test_cmp) == 1);
 
-    vector_free(&v, test_delete);
+  vector_free(&v, test_delete);
 }
 void test_vector_insert_by_index2() {
-    printf("test_vector_insert_by_index2\n");
-    int args[3] = {0, 1, 2};
+  printf("test_vector_insert_by_index2\n");
+  int args[3] = {0, 1, 2};
 
-    vector_t v;
-    vector_init(&v, 0, sizeof(int));
+  vector_t v;
+  vector_init(&v, 0, sizeof(int));
 
-    vector_push_back(&v, (void *)&args[0]);
-    vector_push_back(&v, (void *)&args[1]);
-    vector_push_back(&v, (void *)&args[2]);
+  vector_push_back(&v, (void *)&args[0]);
+  vector_push_back(&v, (void *)&args[1]);
+  vector_push_back(&v, (void *)&args[2]);
 
-    int item = 100;
-    vector_insert_by_index(&v, 2, (void *)&item);
+  int item = 100;
+  vector_insert_by_index(&v, 2, (void *)&item);
 
-    assert(v.size == 4);
-    assert(vector_is_empty(&v) == 0);
-    int key0 = 0;
-    int key1 = 1;
-    int key2 = 2;
-    assert(vector_find(&v, (void *)&key0, test_cmp) == 0);
-    assert(vector_find(&v, (void *)&key1, test_cmp) == 1);
-    assert(vector_find(&v, (void *)&key2, test_cmp) == 3);
-    assert(vector_find(&v, (void *)&item, test_cmp) == 2);
+  assert(v.size == 4);
+  assert(vector_is_empty(&v) == 0);
+  int key0 = 0;
+  int key1 = 1;
+  int key2 = 2;
+  assert(vector_find(&v, (void *)&key0, test_cmp) == 0);
+  assert(vector_find(&v, (void *)&key1, test_cmp) == 1);
+  assert(vector_find(&v, (void *)&key2, test_cmp) == 3);
+  assert(vector_find(&v, (void *)&item, test_cmp) == 2);
 
-    vector_free(&v, test_delete);
-
+  vector_free(&v, test_delete);
 }
 void test_vector_insert_by_index3() {
-    printf("test_vector_insert_by_index3\n");
-    int args[3] = {0, 1, 2};
+  printf("test_vector_insert_by_index3\n");
+  int args[3] = {0, 1, 2};
 
-    vector_t v;
-    vector_init(&v, 0, sizeof(int));
+  vector_t v;
+  vector_init(&v, 0, sizeof(int));
 
-    vector_push_back(&v, (void *)&args[0]);
-    vector_push_back(&v, (void *)&args[1]);
-    vector_push_back(&v, (void *)&args[2]);
+  vector_push_back(&v, (void *)&args[0]);
+  vector_push_back(&v, (void *)&args[1]);
+  vector_push_back(&v, (void *)&args[2]);
 
-    int item = 100;
-    vector_insert_by_index(&v, 3, (void *)&item);
+  int item = 100;
+  vector_insert_by_index(&v, 3, (void *)&item);
 
-    assert(v.size == 4);
-    assert(vector_is_empty(&v) == 0);
-    int key0 = 0;
-    int key1 = 1;
-    int key2 = 2;
-    assert(vector_find(&v, (void *)&key0, test_cmp) == 0);
-    assert(vector_find(&v, (void *)&key1, test_cmp) == 1);
-    assert(vector_find(&v, (void *)&key2, test_cmp) == 2);
-    assert(vector_find(&v, (void *)&item, test_cmp) == 3);
+  assert(v.size == 4);
+  assert(vector_is_empty(&v) == 0);
+  int key0 = 0;
+  int key1 = 1;
+  int key2 = 2;
+  assert(vector_find(&v, (void *)&key0, test_cmp) == 0);
+  assert(vector_find(&v, (void *)&key1, test_cmp) == 1);
+  assert(vector_find(&v, (void *)&key2, test_cmp) == 2);
+  assert(vector_find(&v, (void *)&item, test_cmp) == 3);
 
-    vector_free(&v, test_delete);
+  vector_free(&v, test_delete);
 }
 void test_vector_insert_by_index4() {
-    printf("test_vector_insert_by_index4\n");
-    int args[3] = {0, 1, 2};
+  printf("test_vector_insert_by_index4\n");
+  int args[3] = {0, 1, 2};
 
-    vector_t v;
-    vector_init(&v, 0, sizeof(int));
+  vector_t v;
+  vector_init(&v, 0, sizeof(int));
 
-    vector_push_back(&v, (void *)&args[0]);
-    vector_push_back(&v, (void *)&args[1]);
-    vector_push_back(&v, (void *)&args[2]);
+  vector_push_back(&v, (void *)&args[0]);
+  vector_push_back(&v, (void *)&args[1]);
+  vector_push_back(&v, (void *)&args[2]);
 
-    int item = 100;
-    vector_insert_by_index(&v, 100, (void *)&item);
+  int item = 100;
+  vector_insert_by_index(&v, 100, (void *)&item);
 
-    assert(v.size == 3);
-    assert(vector_is_empty(&v) == 0);
-    int key0 = 0;
-    int key1 = 1;
-    int key2 = 2;
-    assert(vector_find(&v, (void *)&key0, test_cmp) == 0);
-    assert(vector_find(&v, (void *)&key1, test_cmp) == 1);
-    assert(vector_find(&v, (void *)&key2, test_cmp) == 2);
-    assert(vector_find(&v, (void *)&item, test_cmp) == -1);
+  assert(v.size == 3);
+  assert(vector_is_empty(&v) == 0);
+  int key0 = 0;
+  int key1 = 1;
+  int key2 = 2;
+  assert(vector_find(&v, (void *)&key0, test_cmp) == 0);
+  assert(vector_find(&v, (void *)&key1, test_cmp) == 1);
+  assert(vector_find(&v, (void *)&key2, test_cmp) == 2);
+  assert(vector_find(&v, (void *)&item, test_cmp) == -1);
 
-    vector_free(&v, test_delete);
+  vector_free(&v, test_delete);
 }
 void test_vector_insert_by_index5() {
-    printf("test_vector_insert_by_index5\n");
+  printf("test_vector_insert_by_index5\n");
 
-    int args[3] = {0, 1, 2};
+  int args[3] = {0, 1, 2};
 
-    vector_t v;
-    vector_init(&v, 0, sizeof(int));
+  vector_t v;
+  vector_init(&v, 0, sizeof(int));
 
-    vector_push_back(&v, (void *)&args[0]);
-    vector_push_back(&v, (void *)&args[1]);
-    vector_push_back(&v, (void *)&args[2]);
+  vector_push_back(&v, (void *)&args[0]);
+  vector_push_back(&v, (void *)&args[1]);
+  vector_push_back(&v, (void *)&args[2]);
 
-    int item = 100;
-    vector_insert_by_index(&v, 0, (void *)&item);
+  int item = 100;
+  vector_insert_by_index(&v, 0, (void *)&item);
 
-    assert(v.size == 4);
-    assert(vector_is_empty(&v) == 0);
-    int key0 = 0;
-    int key1 = 1;
-    int key2 = 2;
-    assert(vector_find(&v, (void *)&key0, test_cmp) == 1);
-    assert(vector_find(&v, (void *)&key1, test_cmp) == 2);
-    assert(vector_find(&v, (void *)&key2, test_cmp) == 3);
-    assert(vector_find(&v, (void *)&item, test_cmp) == 0);
+  assert(v.size == 4);
+  assert(vector_is_empty(&v) == 0);
+  int key0 = 0;
+  int key1 = 1;
+  int key2 = 2;
+  assert(vector_find(&v, (void *)&key0, test_cmp) == 1);
+  assert(vector_find(&v, (void *)&key1, test_cmp) == 2);
+  assert(vector_find(&v, (void *)&key2, test_cmp) == 3);
+  assert(vector_find(&v, (void *)&item, test_cmp) == 0);
 
-    vector_free(&v, test_delete);
+  vector_free(&v, test_delete);
 }
