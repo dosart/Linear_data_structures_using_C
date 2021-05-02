@@ -92,7 +92,7 @@ void vector_delete_by_index(vector_t *v, size_t index, void (*delete)(void *)) {
 void *vector_get(vector_t *v, size_t index) {
   if (v != NULL) {
     if (index < v->size) {
-      return (char *)v->data + index * v->elem_size;
+      return get_item(v, index);
     }
   }
   return NULL;
