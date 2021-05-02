@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dynamic_20array_9',['Dynamic array',['../group__vector.html',1,'']]]
+  ['dynamic_20array_27',['Dynamic array',['../group__vector.html',1,'']]]
 ];

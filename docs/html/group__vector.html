@@ -75,12 +75,39 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga309afc1aa587d626ef9813ae81135b6a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structvector__t.html">vector_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#ga309afc1aa587d626ef9813ae81135b6a">vector_make</a> (size_t capacity)</td></tr>
-<tr class="memdesc:ga309afc1aa587d626ef9813ae81135b6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct new vector data structure.  <a href="group__vector.html#ga309afc1aa587d626ef9813ae81135b6a">More...</a><br /></td></tr>
-<tr class="separator:ga309afc1aa587d626ef9813ae81135b6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae9ede5a57eb787778312271cd82ba1b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#gae9ede5a57eb787778312271cd82ba1b3">vector_free</a> (<a class="el" href="structvector__t.html">vector_t</a> *vector)</td></tr>
-<tr class="memdesc:gae9ede5a57eb787778312271cd82ba1b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free memory dynamic array.  <a href="group__vector.html#gae9ede5a57eb787778312271cd82ba1b3">More...</a><br /></td></tr>
-<tr class="separator:gae9ede5a57eb787778312271cd82ba1b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga40ee6fdc8756f3936ac815fbeecb5f6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#ga40ee6fdc8756f3936ac815fbeecb5f6e">vector_init</a> (<a class="el" href="structvector__t.html">vector_t</a> *v, size_t capacity, size_t elem_size)</td></tr>
+<tr class="memdesc:ga40ee6fdc8756f3936ac815fbeecb5f6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct new vector data structure.  <a href="group__vector.html#ga40ee6fdc8756f3936ac815fbeecb5f6e">More...</a><br /></td></tr>
+<tr class="separator:ga40ee6fdc8756f3936ac815fbeecb5f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1a49b69ddca97dc106be8a8380c48416"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#ga1a49b69ddca97dc106be8a8380c48416">vector_free</a> (<a class="el" href="structvector__t.html">vector_t</a> *v, void(*deleter)(void *))</td></tr>
+<tr class="memdesc:ga1a49b69ddca97dc106be8a8380c48416"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free memory dynamic array.  <a href="group__vector.html#ga1a49b69ddca97dc106be8a8380c48416">More...</a><br /></td></tr>
+<tr class="separator:ga1a49b69ddca97dc106be8a8380c48416"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3d5dabce5f292f522c81dc7f5b7fbe39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#ga3d5dabce5f292f522c81dc7f5b7fbe39">vector_push_back</a> (<a class="el" href="structvector__t.html">vector_t</a> *v, void *elem)</td></tr>
+<tr class="memdesc:ga3d5dabce5f292f522c81dc7f5b7fbe39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an item to the end.  <a href="group__vector.html#ga3d5dabce5f292f522c81dc7f5b7fbe39">More...</a><br /></td></tr>
+<tr class="separator:ga3d5dabce5f292f522c81dc7f5b7fbe39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4101b19888fce606d1eb4cfe3835a92c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#ga4101b19888fce606d1eb4cfe3835a92c">vector_insert_by_index</a> (<a class="el" href="structvector__t.html">vector_t</a> *v, size_t index, void *elem)</td></tr>
+<tr class="memdesc:ga4101b19888fce606d1eb4cfe3835a92c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an item by index.  <a href="group__vector.html#ga4101b19888fce606d1eb4cfe3835a92c">More...</a><br /></td></tr>
+<tr class="separator:ga4101b19888fce606d1eb4cfe3835a92c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga449007c53a7bc07b2c009d2fe85c97fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#ga449007c53a7bc07b2c009d2fe85c97fc">vector_delete_by_value</a> (<a class="el" href="structvector__t.html">vector_t</a> *v, void *key, int(*cmp)(void *, void *), void(*deleter)(void *))</td></tr>
+<tr class="memdesc:ga449007c53a7bc07b2c009d2fe85c97fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete item by value, shifting all trailing elements left.  <a href="group__vector.html#ga449007c53a7bc07b2c009d2fe85c97fc">More...</a><br /></td></tr>
+<tr class="separator:ga449007c53a7bc07b2c009d2fe85c97fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga50278aa83e62cf1083c239d6966f9601"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#ga50278aa83e62cf1083c239d6966f9601">vector_delete_by_index</a> (<a class="el" href="structvector__t.html">vector_t</a> *v, size_t index, void(*deleter)(void *))</td></tr>
+<tr class="memdesc:ga50278aa83e62cf1083c239d6966f9601"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete item at index, shifting all trailing elements left.  <a href="group__vector.html#ga50278aa83e62cf1083c239d6966f9601">More...</a><br /></td></tr>
+<tr class="separator:ga50278aa83e62cf1083c239d6966f9601"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1d8fff03ad015cb84df60d8dc9f43bda"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#ga1d8fff03ad015cb84df60d8dc9f43bda">vector_get</a> (<a class="el" href="structvector__t.html">vector_t</a> *v, size_t index)</td></tr>
+<tr class="memdesc:ga1d8fff03ad015cb84df60d8dc9f43bda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns item at given index.  <a href="group__vector.html#ga1d8fff03ad015cb84df60d8dc9f43bda">More...</a><br /></td></tr>
+<tr class="separator:ga1d8fff03ad015cb84df60d8dc9f43bda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga87801ab4f4b7619f9db1020b5a84344e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#ga87801ab4f4b7619f9db1020b5a84344e">vector_set</a> (<a class="el" href="structvector__t.html">vector_t</a> *v, size_t index, void *elem)</td></tr>
+<tr class="memdesc:ga87801ab4f4b7619f9db1020b5a84344e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change element by index.  <a href="group__vector.html#ga87801ab4f4b7619f9db1020b5a84344e">More...</a><br /></td></tr>
+<tr class="separator:ga87801ab4f4b7619f9db1020b5a84344e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaa8f4318bf03a7886169e85c151b6903"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#gaaa8f4318bf03a7886169e85c151b6903">vector_size</a> (<a class="el" href="structvector__t.html">vector_t</a> *v)</td></tr>
+<tr class="memdesc:gaaa8f4318bf03a7886169e85c151b6903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns size of vector (expressed in terms of elements)  <a href="group__vector.html#gaaa8f4318bf03a7886169e85c151b6903">More...</a><br /></td></tr>
+<tr class="separator:gaaa8f4318bf03a7886169e85c151b6903"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae938247bbdd6eca0dd7e528d3e01646e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#gae938247bbdd6eca0dd7e528d3e01646e">vector_is_empty</a> (<a class="el" href="structvector__t.html">vector_t</a> *v)</td></tr>
+<tr class="memdesc:gae938247bbdd6eca0dd7e528d3e01646e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if vector is empty (expressed in terms of elements)  <a href="group__vector.html#gae938247bbdd6eca0dd7e528d3e01646e">More...</a><br /></td></tr>
+<tr class="separator:gae938247bbdd6eca0dd7e528d3e01646e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9a79205e35b642cfed21c47f096a5ab6"><td class="memItemLeft" align="right" valign="top">long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#ga9a79205e35b642cfed21c47f096a5ab6">vector_find</a> (<a class="el" href="structvector__t.html">vector_t</a> *v, void *key, int(*cmp)(void *, void *))</td></tr>
+<tr class="memdesc:ga9a79205e35b642cfed21c47f096a5ab6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns index of find element. Returns -1 if key is not found.  <a href="group__vector.html#ga9a79205e35b642cfed21c47f096a5ab6">More...</a><br /></td></tr>
+<tr class="separator:ga9a79205e35b642cfed21c47f096a5ab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Implementation dynamic array (vector) </p>
@@ -89,8 +116,148 @@ Functions</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>25 april 2021</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>This structure created only for educational goals </dd></dl>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="gae9ede5a57eb787778312271cd82ba1b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae9ede5a57eb787778312271cd82ba1b3">&#9670;&nbsp;</a></span>vector_free()</h2>
+<a id="ga50278aa83e62cf1083c239d6966f9601"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga50278aa83e62cf1083c239d6966f9601">&#9670;&nbsp;</a></span>vector_delete_by_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vector_delete_by_index </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structvector__t.html">vector_t</a> *&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*)(void *)&#160;</td>
+          <td class="paramname"><em>deleter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Delete item at index, shifting all trailing elements left. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>pointer to vector data structure </td></tr>
+    <tr><td class="paramname">index</td><td>index for delete </td></tr>
+    <tr><td class="paramname">deleter</td><td>function to remove an item </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga449007c53a7bc07b2c009d2fe85c97fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga449007c53a7bc07b2c009d2fe85c97fc">&#9670;&nbsp;</a></span>vector_delete_by_value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vector_delete_by_value </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structvector__t.html">vector_t</a> *&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int(*)(void *, void *)&#160;</td>
+          <td class="paramname"><em>cmp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*)(void *)&#160;</td>
+          <td class="paramname"><em>deleter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Delete item by value, shifting all trailing elements left. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>pointer to vector data structure </td></tr>
+    <tr><td class="paramname">index</td><td>index for delete </td></tr>
+    <tr><td class="paramname">cmp</td><td>a function that takes two arguments. Returns 1 if the elements are </td></tr>
+    <tr><td class="paramname">deleter</td><td>function to remove an item </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga9a79205e35b642cfed21c47f096a5ab6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9a79205e35b642cfed21c47f096a5ab6">&#9670;&nbsp;</a></span>vector_find()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long long vector_find </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structvector__t.html">vector_t</a> *&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int(*)(void *, void *)&#160;</td>
+          <td class="paramname"><em>cmp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns index of find element. Returns -1 if key is not found. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>pointer to vector data structure </td></tr>
+    <tr><td class="paramname">key</td><td>key for search </td></tr>
+    <tr><td class="paramname">cmp</td><td>a function that takes two arguments. Returns 1 if the elements are equal, otherwise 0</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>capacity of vector </dd></dl>
+
+</div>
+</div>
+<a id="ga1a49b69ddca97dc106be8a8380c48416"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1a49b69ddca97dc106be8a8380c48416">&#9670;&nbsp;</a></span>vector_free()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -99,8 +266,18 @@ Functions</h2></td></tr>
           <td class="memname">void vector_free </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structvector__t.html">vector_t</a> *&#160;</td>
-          <td class="paramname"><em>vector</em></td><td>)</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">void(*)(void *)&#160;</td>
+          <td class="paramname"><em>deleter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -108,25 +285,83 @@ Functions</h2></td></tr>
 <p>Free memory dynamic array. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">vector</td><td>pointer to vector </td></tr>
+    <tr><td class="paramname">v</td><td>pointer to vector<ul>
+<li></li>
+</ul>
+</td></tr>
+    <tr><td class="paramname">deleter</td><td>function to remove an item </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="ga309afc1aa587d626ef9813ae81135b6a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga309afc1aa587d626ef9813ae81135b6a">&#9670;&nbsp;</a></span>vector_make()</h2>
+<a id="ga1d8fff03ad015cb84df60d8dc9f43bda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1d8fff03ad015cb84df60d8dc9f43bda">&#9670;&nbsp;</a></span>vector_get()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structvector__t.html">vector_t</a> vector_make </td>
+          <td class="memname">void* vector_get </td>
           <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>capacity</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structvector__t.html">vector_t</a> *&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns item at given index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>pointer to vector data structure </td></tr>
+    <tr><td class="paramname">elem</td><td>element for add</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>item at given index </dd></dl>
+
+</div>
+</div>
+<a id="ga40ee6fdc8756f3936ac815fbeecb5f6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga40ee6fdc8756f3936ac815fbeecb5f6e">&#9670;&nbsp;</a></span>vector_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vector_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structvector__t.html">vector_t</a> *&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>capacity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>elem_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -134,11 +369,193 @@ Functions</h2></td></tr>
 <p>Construct new vector data structure. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">capacity</td><td>capacity of vector if size == 0, set size = 16</td></tr>
+    <tr><td class="paramname">v</td><td>pointer to vector data structure </td></tr>
+    <tr><td class="paramname">capacity</td><td>the size of the storage space currently allocated for the vector, expressed in terms of elements. if capacity == 0, set capacity = 16 on first addition</td></tr>
+    <tr><td class="paramname">elem_size</td><td>Size of vector item</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>vector data structure </dd></dl>
+
+</div>
+</div>
+<a id="ga4101b19888fce606d1eb4cfe3835a92c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4101b19888fce606d1eb4cfe3835a92c">&#9670;&nbsp;</a></span>vector_insert_by_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vector_insert_by_index </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structvector__t.html">vector_t</a> *&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>elem</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds an item by index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>pointer to vector data structure </td></tr>
+    <tr><td class="paramname">index</td><td>index for added </td></tr>
+    <tr><td class="paramname">elem</td><td>element for add </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gae938247bbdd6eca0dd7e528d3e01646e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae938247bbdd6eca0dd7e528d3e01646e">&#9670;&nbsp;</a></span>vector_is_empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t vector_is_empty </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structvector__t.html">vector_t</a> *&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns true if vector is empty (expressed in terms of elements) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>pointer to vector data structure</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if size == 0 else 0 </dd></dl>
+
+</div>
+</div>
+<a id="ga3d5dabce5f292f522c81dc7f5b7fbe39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3d5dabce5f292f522c81dc7f5b7fbe39">&#9670;&nbsp;</a></span>vector_push_back()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vector_push_back </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structvector__t.html">vector_t</a> *&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>elem</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds an item to the end. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>pointer to vector data structure </td></tr>
+    <tr><td class="paramname">elem</td><td>element for add </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga87801ab4f4b7619f9db1020b5a84344e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga87801ab4f4b7619f9db1020b5a84344e">&#9670;&nbsp;</a></span>vector_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vector_set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structvector__t.html">vector_t</a> *&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>elem</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Change element by index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>pointer to vector data structure </td></tr>
+    <tr><td class="paramname">index</td><td>index for change element </td></tr>
+    <tr><td class="paramname">elem</td><td>element for change</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>item at given index </dd></dl>
+
+</div>
+</div>
+<a id="gaaa8f4318bf03a7886169e85c151b6903"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaa8f4318bf03a7886169e85c151b6903">&#9670;&nbsp;</a></span>vector_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t vector_size </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structvector__t.html">vector_t</a> *&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns size of vector (expressed in terms of elements) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>pointer to vector data structure</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>size of vector </dd></dl>
 
 </div>
 </div>

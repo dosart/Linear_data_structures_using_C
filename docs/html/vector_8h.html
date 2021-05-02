@@ -78,14 +78,18 @@ $(function() {
 
 <p>Header file for dynamic array (vector)  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for vector.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="vector_8h__incl.png" border="0" usemap="#linear__data__structures_2vector_2include_2vector_8h" alt=""/></div>
 <map name="linear__data__structures_2vector_2include_2vector_8h" id="linear__data__structures_2vector_2include_2vector_8h">
-<area shape="rect" title="Header file for dynamic array (vector)" alt="" coords="5,5,180,47"/>
-<area shape="rect" title=" " alt="" coords="57,95,128,121"/>
+<area shape="rect" title="Header file for dynamic array (vector)" alt="" coords="45,5,219,47"/>
+<area shape="rect" title=" " alt="" coords="5,95,72,121"/>
+<area shape="rect" title=" " alt="" coords="97,95,167,121"/>
+<area shape="rect" title=" " alt="" coords="191,95,262,121"/>
 </map>
 </div>
 </div>
@@ -104,12 +108,39 @@ typedef struct <a class="el" href="structvector__t.html">vector_t</a>&#160;</td>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga309afc1aa587d626ef9813ae81135b6a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structvector__t.html">vector_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#ga309afc1aa587d626ef9813ae81135b6a">vector_make</a> (size_t capacity)</td></tr>
-<tr class="memdesc:ga309afc1aa587d626ef9813ae81135b6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct new vector data structure.  <a href="group__vector.html#ga309afc1aa587d626ef9813ae81135b6a">More...</a><br /></td></tr>
-<tr class="separator:ga309afc1aa587d626ef9813ae81135b6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae9ede5a57eb787778312271cd82ba1b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#gae9ede5a57eb787778312271cd82ba1b3">vector_free</a> (<a class="el" href="structvector__t.html">vector_t</a> *vector)</td></tr>
-<tr class="memdesc:gae9ede5a57eb787778312271cd82ba1b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free memory dynamic array.  <a href="group__vector.html#gae9ede5a57eb787778312271cd82ba1b3">More...</a><br /></td></tr>
-<tr class="separator:gae9ede5a57eb787778312271cd82ba1b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga40ee6fdc8756f3936ac815fbeecb5f6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#ga40ee6fdc8756f3936ac815fbeecb5f6e">vector_init</a> (<a class="el" href="structvector__t.html">vector_t</a> *v, size_t capacity, size_t elem_size)</td></tr>
+<tr class="memdesc:ga40ee6fdc8756f3936ac815fbeecb5f6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct new vector data structure.  <a href="group__vector.html#ga40ee6fdc8756f3936ac815fbeecb5f6e">More...</a><br /></td></tr>
+<tr class="separator:ga40ee6fdc8756f3936ac815fbeecb5f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1a49b69ddca97dc106be8a8380c48416"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#ga1a49b69ddca97dc106be8a8380c48416">vector_free</a> (<a class="el" href="structvector__t.html">vector_t</a> *v, void(*deleter)(void *))</td></tr>
+<tr class="memdesc:ga1a49b69ddca97dc106be8a8380c48416"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free memory dynamic array.  <a href="group__vector.html#ga1a49b69ddca97dc106be8a8380c48416">More...</a><br /></td></tr>
+<tr class="separator:ga1a49b69ddca97dc106be8a8380c48416"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3d5dabce5f292f522c81dc7f5b7fbe39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#ga3d5dabce5f292f522c81dc7f5b7fbe39">vector_push_back</a> (<a class="el" href="structvector__t.html">vector_t</a> *v, void *elem)</td></tr>
+<tr class="memdesc:ga3d5dabce5f292f522c81dc7f5b7fbe39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an item to the end.  <a href="group__vector.html#ga3d5dabce5f292f522c81dc7f5b7fbe39">More...</a><br /></td></tr>
+<tr class="separator:ga3d5dabce5f292f522c81dc7f5b7fbe39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4101b19888fce606d1eb4cfe3835a92c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#ga4101b19888fce606d1eb4cfe3835a92c">vector_insert_by_index</a> (<a class="el" href="structvector__t.html">vector_t</a> *v, size_t index, void *elem)</td></tr>
+<tr class="memdesc:ga4101b19888fce606d1eb4cfe3835a92c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an item by index.  <a href="group__vector.html#ga4101b19888fce606d1eb4cfe3835a92c">More...</a><br /></td></tr>
+<tr class="separator:ga4101b19888fce606d1eb4cfe3835a92c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga449007c53a7bc07b2c009d2fe85c97fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#ga449007c53a7bc07b2c009d2fe85c97fc">vector_delete_by_value</a> (<a class="el" href="structvector__t.html">vector_t</a> *v, void *key, int(*cmp)(void *, void *), void(*deleter)(void *))</td></tr>
+<tr class="memdesc:ga449007c53a7bc07b2c009d2fe85c97fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete item by value, shifting all trailing elements left.  <a href="group__vector.html#ga449007c53a7bc07b2c009d2fe85c97fc">More...</a><br /></td></tr>
+<tr class="separator:ga449007c53a7bc07b2c009d2fe85c97fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga50278aa83e62cf1083c239d6966f9601"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#ga50278aa83e62cf1083c239d6966f9601">vector_delete_by_index</a> (<a class="el" href="structvector__t.html">vector_t</a> *v, size_t index, void(*deleter)(void *))</td></tr>
+<tr class="memdesc:ga50278aa83e62cf1083c239d6966f9601"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete item at index, shifting all trailing elements left.  <a href="group__vector.html#ga50278aa83e62cf1083c239d6966f9601">More...</a><br /></td></tr>
+<tr class="separator:ga50278aa83e62cf1083c239d6966f9601"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1d8fff03ad015cb84df60d8dc9f43bda"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#ga1d8fff03ad015cb84df60d8dc9f43bda">vector_get</a> (<a class="el" href="structvector__t.html">vector_t</a> *v, size_t index)</td></tr>
+<tr class="memdesc:ga1d8fff03ad015cb84df60d8dc9f43bda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns item at given index.  <a href="group__vector.html#ga1d8fff03ad015cb84df60d8dc9f43bda">More...</a><br /></td></tr>
+<tr class="separator:ga1d8fff03ad015cb84df60d8dc9f43bda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga87801ab4f4b7619f9db1020b5a84344e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#ga87801ab4f4b7619f9db1020b5a84344e">vector_set</a> (<a class="el" href="structvector__t.html">vector_t</a> *v, size_t index, void *elem)</td></tr>
+<tr class="memdesc:ga87801ab4f4b7619f9db1020b5a84344e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change element by index.  <a href="group__vector.html#ga87801ab4f4b7619f9db1020b5a84344e">More...</a><br /></td></tr>
+<tr class="separator:ga87801ab4f4b7619f9db1020b5a84344e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaa8f4318bf03a7886169e85c151b6903"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#gaaa8f4318bf03a7886169e85c151b6903">vector_size</a> (<a class="el" href="structvector__t.html">vector_t</a> *v)</td></tr>
+<tr class="memdesc:gaaa8f4318bf03a7886169e85c151b6903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns size of vector (expressed in terms of elements)  <a href="group__vector.html#gaaa8f4318bf03a7886169e85c151b6903">More...</a><br /></td></tr>
+<tr class="separator:gaaa8f4318bf03a7886169e85c151b6903"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae938247bbdd6eca0dd7e528d3e01646e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#gae938247bbdd6eca0dd7e528d3e01646e">vector_is_empty</a> (<a class="el" href="structvector__t.html">vector_t</a> *v)</td></tr>
+<tr class="memdesc:gae938247bbdd6eca0dd7e528d3e01646e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if vector is empty (expressed in terms of elements)  <a href="group__vector.html#gae938247bbdd6eca0dd7e528d3e01646e">More...</a><br /></td></tr>
+<tr class="separator:gae938247bbdd6eca0dd7e528d3e01646e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9a79205e35b642cfed21c47f096a5ab6"><td class="memItemLeft" align="right" valign="top">long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#ga9a79205e35b642cfed21c47f096a5ab6">vector_find</a> (<a class="el" href="structvector__t.html">vector_t</a> *v, void *key, int(*cmp)(void *, void *))</td></tr>
+<tr class="memdesc:ga9a79205e35b642cfed21c47f096a5ab6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns index of find element. Returns -1 if key is not found.  <a href="group__vector.html#ga9a79205e35b642cfed21c47f096a5ab6">More...</a><br /></td></tr>
+<tr class="separator:ga9a79205e35b642cfed21c47f096a5ab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Header file for dynamic array (vector) </p>
