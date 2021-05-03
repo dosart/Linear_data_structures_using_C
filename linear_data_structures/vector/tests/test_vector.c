@@ -5,7 +5,6 @@
 #include <assert.h>
 #include <stdio.h>
 
-#include "../include/vector.h"
 #include "test_vector.h"
 
 void test_delete(void *key) { *(int *)key = 0; }

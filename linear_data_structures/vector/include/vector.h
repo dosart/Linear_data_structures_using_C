@@ -11,6 +11,7 @@ This file contains the definition of the data structure dynamic array
 #include <stdlib.h>
 #include <string.h>
 
+
 /**
  * \defgroup vector Dynamic array
  *

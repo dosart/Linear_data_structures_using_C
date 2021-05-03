@@ -5,6 +5,8 @@
 #ifndef LINEAR_DATA_STRUCTURES_USING_C_TEST_VECTOR_H
 #define LINEAR_DATA_STRUCTURES_USING_C_TEST_VECTOR_H
 
+#include "../include/vector.h"
+
 void test_vector_init_zero_size();
 void test_vector_init();
 

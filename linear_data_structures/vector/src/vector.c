@@ -1,4 +1,5 @@
 #include "../include/vector.h"
+#include "../include/utils.h"
 
 void vector_init(vector_t *v, size_t capacity, size_t elem_size) {
   if (v != NULL) {
@@ -9,9 +10,6 @@ void vector_init(vector_t *v, size_t capacity, size_t elem_size) {
   }
 }
 
-static void *get_item(vector_t *v, size_t index) {
-  return (char *)v->data + index * v->elem_size;
-}
 
 void vector_free(vector_t *vector, void (*deleter)(void *)) {
   if (vector != NULL) {
