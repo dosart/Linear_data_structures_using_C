@@ -6,7 +6,7 @@ build_exist:
 	if [ ! -d "./linear_data_structures/vector/build" ]; then mkdir "./linear_data_structures/vector/build"; fi
 
 test_vector: build_exist
-	cd linear_data_structures/vector/build && cmake .. && make && ./test
+	cd linear_data_structures/vector && make test && ./build/test
 
 check_source_file:
 	cppcheck --suppress=missingIncludeSystem -q --enable=all --inconclusive --check-config ./linear_data_structures .
