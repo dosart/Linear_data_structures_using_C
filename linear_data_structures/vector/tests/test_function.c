@@ -55,4 +55,11 @@ void test_filter() {
 
   vector_t out = vector_filter(&v, test_filter_function);
   assert(out.size == 3);
+  
+  int key0 = 0;
+  int key1 = 2;
+  int key2 = 4;
+  assert(vector_find(&out, (void *)&key0, test_cmp) == 0);
+  assert(vector_find(&out, (void *)&key1, test_cmp) == 1);
+  assert(vector_find(&out, (void *)&key2, test_cmp) == 2);
 }
