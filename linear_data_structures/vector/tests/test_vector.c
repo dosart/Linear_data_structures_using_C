@@ -8,6 +8,7 @@ void test_delete(void *key) { *(int *)key = 0; }
 
 extern void test_foreach();
 extern void test_filter();
+extern void test_any();
 
 int main() {
   test_vector_init_zero_size();
@@ -44,6 +45,7 @@ int main() {
 
   test_foreach();
   test_filter();
+  test_any();
 }
 
 void test_vector_init_zero_size() {

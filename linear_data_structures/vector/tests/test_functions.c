@@ -2,7 +2,7 @@
 // Created by dosart on 04.05.2021.
 //
 
-#include "../include/function.h"
+#include "../include/functions.h"
 #include "../include/vector.h"
 
 #include <assert.h>
@@ -68,4 +68,23 @@ void test_filter() {
 
   vector_free(&v, test_delete);
   vector_free(&out, test_delete);
+}
+
+void test_any() {
+  printf("test_any\n");
+  int args[] = {0, 1, 2, 3, 4, 5};
+
+  vector_t v;
+  vector_init(&v, 0, sizeof(int));
+
+  vector_push_back(&v, (void *)&args[0]);
+  vector_push_back(&v, (void *)&args[1]);
+  vector_push_back(&v, (void *)&args[2]);
+  vector_push_back(&v, (void *)&args[3]);
+  vector_push_back(&v, (void *)&args[4]);
+
+  int result = vector_any(&v, test_filter_function);
+  assert(result == 1);
+
+  vector_free(&v, test_delete);
 }

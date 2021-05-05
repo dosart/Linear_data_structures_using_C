@@ -2,7 +2,7 @@
 // Created by dosart on 03.05.2021.
 //
 
-#include "../include/function.h"
+#include "../include/functions.h"
 #include "../include/utils.h"
 
 void vector_foreach(vector_t *v, void (*f)(void *)) {
@@ -26,4 +26,15 @@ vector_t vector_filter(vector_t *v, int (*pred)(void *)) {
     return out;
   }
   return out;
+}
+
+int vector_any(vector_t *v, int (*pred)(void *)) {
+  int result = 0;
+  if (v != NULL) {
+    for (size_t i = 0; i < v->size; ++i)
+      if (pred(get_item(v, i)))
+        result = 1;
+    return result;
+  }
+  return result;
 }
