@@ -49,6 +49,16 @@ void vector_init(vector_t *v, size_t capacity, size_t elem_size);
 /**
  * @ingroup vector
  *
+ * @brief Implementation null object pattern.
+ *
+ * Return not valid vector
+ *
+ */
+void vector_null(vector_t *v);
+
+/**
+ * @ingroup vector
+ *
  * @brief Free memory dynamic array
  *
  * @param v pointer to vector
