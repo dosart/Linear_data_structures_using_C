@@ -7,6 +7,9 @@
 
 #include "../include/vector.h"
 
+#include <assert.h>
+#include <stdio.h>
+
 void test_vector_init_zero_size();
 void test_vector_init();
 

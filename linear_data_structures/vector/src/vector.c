@@ -10,7 +10,6 @@ void vector_init(vector_t *v, size_t capacity, size_t elem_size) {
   }
 }
 
-
 void vector_free(vector_t *vector, void (*deleter)(void *)) {
   if (vector != NULL) {
     for (size_t i = 0; i < vector->size; ++i) {

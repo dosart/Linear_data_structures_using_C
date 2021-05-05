@@ -5,5 +5,5 @@
 #include "../include/utils.h"
 
 void *get_item(vector_t *v, size_t index) {
-    return (char *)v->data + index * v->elem_size;
+  return (char *)v->data + index * v->elem_size;
 }

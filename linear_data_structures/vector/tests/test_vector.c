@@ -2,12 +2,12 @@
 // Created by dosart on 25.04.2021.
 //
 
-#include <assert.h>
-#include <stdio.h>
-
 #include "test_vector.h"
 
 void test_delete(void *key) { *(int *)key = 0; }
+
+extern void test_foreach();
+extern void test_filter();
 
 int main() {
   test_vector_init_zero_size();
@@ -41,6 +41,9 @@ int main() {
   test_vector_insert_by_index3();
   test_vector_insert_by_index4();
   test_vector_insert_by_index5();
+
+  test_foreach();
+  test_filter();
 }
 
 void test_vector_init_zero_size() {

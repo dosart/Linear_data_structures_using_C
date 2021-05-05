@@ -9,4 +9,4 @@
 
 void *get_item(vector_t *v, size_t index);
 
-#endif //LINEAR_DATA_STRUCTURES_USING_C_UTILS_H
+#endif // LINEAR_DATA_STRUCTURES_USING_C_UTILS_H

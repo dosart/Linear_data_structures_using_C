@@ -11,7 +11,6 @@ This file contains the definition of the data structure dynamic array
 #include <stdlib.h>
 #include <string.h>
 
-
 /**
  * \defgroup vector Dynamic array
  *
@@ -44,8 +43,6 @@ typedef struct vector_t {
  * on first addition
  *
  * @param elem_size Size of vector item
- *
- * @return vector data structure
  */
 void vector_init(vector_t *v, size_t capacity, size_t elem_size);
 
@@ -55,7 +52,7 @@ void vector_init(vector_t *v, size_t capacity, size_t elem_size);
  * @brief Free memory dynamic array
  *
  * @param v pointer to vector
- * * @param deleter function to remove an item
+ * @param deleter function to remove an item
  */
 void vector_free(vector_t *v, void (*deleter)(void *));
 
