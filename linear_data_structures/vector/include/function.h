@@ -20,7 +20,7 @@ void vector_foreach(vector_t *v, void (*f)(void *));
 /**
  * @ingroup vector
  *
- * @brief Write to out an array for elements whose predicate returns logical
+ * @brief Add to a new array elements whose predicate returns true
  * true
  *
  * @param v pointer to vector
