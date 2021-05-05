@@ -8,6 +8,7 @@
 #include <assert.h>
 
 extern int test_cmp(void *x, void *y);
+extern void test_delete(void *key);
 
 void test_foreach_function(void *item) {
   int *p = (int *)item;
@@ -33,6 +34,8 @@ void test_foreach() {
   assert(vector_find(&v, (void *)&key0, test_cmp) == 0);
   assert(vector_find(&v, (void *)&key1, test_cmp) == 1);
   assert(vector_find(&v, (void *)&key2, test_cmp) == 2);
+
+  vector_free(&v, test_delete);
 }
 
 int test_filter_function(void *item) {
@@ -55,11 +58,14 @@ void test_filter() {
 
   vector_t out = vector_filter(&v, test_filter_function);
   assert(out.size == 3);
-  
+
   int key0 = 0;
   int key1 = 2;
   int key2 = 4;
   assert(vector_find(&out, (void *)&key0, test_cmp) == 0);
   assert(vector_find(&out, (void *)&key1, test_cmp) == 1);
   assert(vector_find(&out, (void *)&key2, test_cmp) == 2);
+
+  vector_free(&v, test_delete);
+  vector_free(&out, test_delete);
 }

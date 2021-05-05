@@ -3,7 +3,7 @@
 
 void vector_init(vector_t *v, size_t capacity, size_t elem_size) {
   if (v != NULL) {
-    v->data = malloc(elem_size * v->capacity);
+    v->data = malloc(elem_size * capacity);
     v->elem_size = elem_size;
     v->capacity = capacity;
     v->size = 0;
