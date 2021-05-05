@@ -25,10 +25,9 @@ void vector_foreach(vector_t *v, void (*f)(void *));
  *
  * @param v pointer to vector
  * @param f function predicate. Applies to every item v
- * @param out pointer to array for elements whose predicate returns logical true
  *
- * @returns Size of the new array
+ * @returns New vector with filtered values
  */
-size_t vector_filter(vector_t *v, int (*f)(void *), void** out);
+vector_t vector_filter(vector_t *v, int (*f)(void *));
 
 #endif // LINEAR_DATA_STRUCTURES_USING_C_FOREACH_H

@@ -53,10 +53,6 @@ void test_filter() {
   vector_push_back(&v, (void *)&args[3]);
   vector_push_back(&v, (void *)&args[4]);
 
-  int *aOdd = NULL;
-  size_t size= vector_filter(&v, test_filter_function, (void**)&aOdd);
-  assert(size == 3);
-    assert(aOdd[0] == 0);
-    assert(aOdd[1] == 2);
-    assert(aOdd[2] == 4);
+  vector_t out = vector_filter(&v, test_filter_function);
+  assert(out.size == 3);
 }
