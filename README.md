@@ -6,7 +6,7 @@ The project was made as part of the [Coding Interview University](https://github
 # Linear data structures using C
 Implementation of classic linear data structures
 
-## Vector(Dynamic array)
+## Vector (Dynamic array)
 
 - [x] vector_get - returns item at given index, NULL if index out of bounds
 - [x] vector_push_back - adds an element to the end
@@ -17,5 +17,8 @@ Implementation of classic linear data structures
 - [x] vector_delete_by_value() - delete item at index, shifting all trailing elements left
 - [x] vector_delete_by_value() - looks for value and removes index holding it (even if in multiple places)
 - [x] vector_insert_by_index() - inserts item at index, shifts that index's value and trailing elements to the right
+
+### Higher-order functions
 - [x] vector_foreach - applies a function to each element of the array
-- [x] vector_filter - add to a new array elements whose predicate returns true 
+- [x] vector_filter - add to a new array elements whose predicate returns true
+- [x] vector_fold - converts a vector to a single value 
