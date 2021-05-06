@@ -41,4 +41,6 @@ vector_t vector_filter(vector_t *v, int (*f)(void *));
  */
 int vector_any(vector_t *v, int (*f)(void *));
 
+void vector_fold(vector_t *v, void *acc, void (*fun)(void *, void *));
+
 #endif // LINEAR_DATA_STRUCTURES_USING_C_FOREACH_H

@@ -88,3 +88,31 @@ void test_any() {
 
   vector_free(&v, test_delete);
 }
+
+void test_sum(void* acc, void* arg) {
+    int x = *(int*)acc;
+    int y = *(int*)arg;
+
+    *(int*)acc = x + y;
+}
+
+void test_fold() {
+    printf("test_fold\n");
+    int args[] = {0, 1, 2, 3, 4, 5};
+
+    vector_t v;
+    vector_init(&v, 0, sizeof(int));
+
+    vector_push_back(&v, (void *)&args[0]);
+    vector_push_back(&v, (void *)&args[1]);
+    vector_push_back(&v, (void *)&args[2]);
+    vector_push_back(&v, (void *)&args[3]);
+    vector_push_back(&v, (void *)&args[4]);
+    vector_push_back(&v, (void *)&args[5]);
+    int result = 0;
+
+    vector_fold(&v, (void*)&result, test_sum);
+    assert(result == 15);
+
+    vector_free(&v, test_delete);
+}

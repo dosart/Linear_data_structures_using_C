@@ -38,3 +38,11 @@ int vector_any(vector_t *v, int (*pred)(void *)) {
   }
   return result;
 }
+
+void vector_fold(vector_t *v, void *acc, void (*fun)(void *, void *)) {
+  if (v != NULL) {
+      for (size_t i = 0; i < v->size; ++i) {
+          fun(acc, get_item(v, i));
+      }
+  }
+}
