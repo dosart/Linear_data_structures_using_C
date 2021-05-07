@@ -18,12 +18,11 @@ This file contains the definition of the data structure dynamic array
  *
  * @authors Dosart
  *
- * @version 0.1.0
+ * @version 0.2.0
  *
  * @date 25 april 2021
  *
  * @warning This structure created only for educational goals
- *
  */
 typedef struct vector_t {
   void *data;
