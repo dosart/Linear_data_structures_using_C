@@ -44,7 +44,7 @@ typedef struct stack_t {
     stack_item_t*  first, last;
     size_t elem_size;
     size_t size;
-} stack_item_t;
+} stack_t;
 
 /**
  * @ingroup stack
@@ -53,7 +53,7 @@ typedef struct stack_t {
  *
  * @param elem_size Size of stack item
  */
-void stack_init(vector_t *v, size_t elem_size);
+void stack_init(stack_t *v, size_t elem_size);
 
 /**
  * @ingroup stack
@@ -76,5 +76,15 @@ size_t stack_is_empty(stack_t *s);
  * @return size of stack
  */
 size_t stack_size(stack_t *s);
+
+/**
+ * @ingroup stack
+ *
+ * @brief Free memory in stack_item_t
+ *
+ * @param v pointer to stack
+ * @param deleter function to remove an item
+ */
+void stack_free(stack_t *s, void (*deleter)(void *));
 
 #endif //LINEAR_DATA_STRUCTURES_USING_C_STACK_H

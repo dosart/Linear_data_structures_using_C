@@ -22,3 +22,13 @@ size_t stack_size(stack_t *s) {
     return 0;
 }
 
+void stack_free(stack_t *s, void (*deleter)(void *)) {
+    if (s != NULL) {
+        stack_item_t* cur = s->first;
+        while (cur) {
+            deleter(cur->data);
+            cur = cur->next;
+        }
+    }
+}
+
