@@ -7,7 +7,9 @@ This file contains the definition of the data structure stack
 #ifndef LINEAR_DATA_STRUCTURES_USING_C_STACK_H
 #define LINEAR_DATA_STRUCTURES_USING_C_STACK_H
 
+#include <mem.h>
 #include <stddef.h>
+#include <stdlib.h>
 
 /**
  * \defgroup stack Stack data structure
@@ -23,8 +25,8 @@ This file contains the definition of the data structure stack
  * @warning This structure created only for educational goals
  */
 typedef struct stack_item_t {
-    void* data;
-    struct list_item_t* next;
+  void *data;
+  struct list_item_t *next;
 } stack_item_t;
 
 /**
@@ -41,9 +43,9 @@ typedef struct stack_item_t {
  * @warning This structure created only for educational goals
  */
 typedef struct stack_t {
-    stack_item_t*  first, last;
-    size_t elem_size;
-    size_t size;
+  stack_item_t *first, last;
+  size_t elem_size;
+  size_t size;
 } stack_t;
 
 /**
@@ -87,4 +89,14 @@ size_t stack_size(stack_t *s);
  */
 void stack_free(stack_t *s, void (*deleter)(void *));
 
-#endif //LINEAR_DATA_STRUCTURES_USING_C_STACK_H
+/**
+ * @ingroup stack
+ *
+ * @brief Add item to stack
+ *
+ * @param v pointer to stack
+ * @param item element for add
+ */
+void stack_push(stack_t *s, void *item);
+
+#endif // LINEAR_DATA_STRUCTURES_USING_C_STACK_H

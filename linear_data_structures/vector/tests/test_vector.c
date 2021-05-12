@@ -11,6 +11,8 @@ extern void test_filter();
 extern void test_any();
 extern void test_fold();
 
+extern void test_vector_bubble_sort();
+
 int main() {
   test_vector_init_zero_size();
   test_vector_init();
@@ -48,6 +50,8 @@ int main() {
   test_filter();
   test_any();
   test_fold();
+
+  test_vector_bubble_sort();
 }
 
 void test_vector_init_zero_size() {
