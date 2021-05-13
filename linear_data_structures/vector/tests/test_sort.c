@@ -7,11 +7,10 @@
 
 #include <assert.h>
 
-int cmp(void *a, void *b)
-{
-    int x =  *(int *)a;
-    int y = *(int *)b;
-    return x <= y ? 1 : 0;
+int cmp(void *a, void *b) {
+  int x = *(int *)a;
+  int y = *(int *)b;
+  return x <= y ? 1 : 0;
 }
 
 extern int test_cmp(void *x, void *y);
@@ -28,7 +27,8 @@ void test_vector_bubble_sort() {
   vector_push_back(&v, (void *)&args[1]);
   vector_push_back(&v, (void *)&args[2]);
 
-  vector_bubble_sort(&v, cmp);
+  //  vector_bubble_sort(&v, cmp);
+  vector_insertion_sort(&v, cmp);
 
   int key0 = 0;
   int key1 = 1;
