@@ -25,4 +25,5 @@ Implementation of classic linear data structures
 ### Higher-order functions
 - [x] vector_foreach - applies a function to each element of the array
 - [x] vector_filter - add to a new array elements whose predicate returns true
-- [x] vector_fold - converts a vector to a single value 
+- [x] vector_fold - converts a vector to a single value
+- [x] vector_any -  return true if at least one element of an iterable is true else false
