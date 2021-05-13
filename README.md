@@ -21,6 +21,7 @@ Implementation of classic linear data structures
 ### Sort functions
 
 - [x] vector_bubble_sort - implementation bubble sort
+- [x] vector_insertion_sort -  implementation insertion sort
 
 ### Higher-order functions
 - [x] vector_foreach - applies a function to each element of the array
