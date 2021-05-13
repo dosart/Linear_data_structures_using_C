@@ -1,7 +1,3 @@
-//
-// Created by dosart on 12.05.2021.
-//
-
 #include "../include/sort.h"
 #include "../include/vector.h"
 
@@ -25,19 +21,13 @@ void test_vector_bubble_sort() {
 
   vector_bubble_sort(&v, cmp);
 
-//   int key0 = 0;
-//   int key1 = 1;
-//   int key2 = 4;
+  int key0 = 0;
+  int key1 = 1;
+  int key2 = 4;
 
-//   assert(vector_find(&v, (void *)&key0, test_cmp) == 0);
-//   assert(vector_find(&v, (void *)&key1, test_cmp) == 1);
-//   assert(vector_find(&v, (void *)&key2, test_cmp) == 2);
-  
-    printf("%d\n", *(int*)vector_get(&v, 0));
-    printf("%d\n", *(int*)vector_get(&v, 1));
-    printf("%d\n", *(int*)vector_get(&v, 2));
+  assert(vector_find(&v, (void *)&key0, test_cmp) == 2);
+  assert(vector_find(&v, (void *)&key1, test_cmp) == 1);
+  assert(vector_find(&v, (void *)&key2, test_cmp) == 0);
 
   vector_free(&v, test_delete);
 }
-
-#include <assert.h>
