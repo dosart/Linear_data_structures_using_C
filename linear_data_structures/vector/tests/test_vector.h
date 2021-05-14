@@ -22,11 +22,6 @@ void test_vector_get2();
 void test_vector_set1();
 void test_vector_set2();
 
-void test_vector_find1();
-void test_vector_find2();
-void test_vector_find3();
-void test_vector_find4();
-
 void test_vector_delete_by_index1();
 void test_vector_delete_by_index2();
 void test_vector_delete_by_index3();

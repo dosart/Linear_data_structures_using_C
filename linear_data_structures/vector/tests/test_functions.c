@@ -7,12 +7,19 @@
 
 #include <assert.h>
 
-extern int test_cmp(void *x, void *y);
+extern int comporator_for_linear_search(void *x, void *y);
 extern void test_delete(void *key);
 
 void test_foreach_function(void *item) {
   int *p = (int *)item;
   *p = *p * 2;
+}
+
+int test_cmp1(void *x, void *y) {
+    int int_x = *(int *)x;
+    int int_y = *(int *)y;
+
+    return int_x == int_y;
 }
 
 void test_foreach() {
@@ -31,9 +38,9 @@ void test_foreach() {
   int key0 = 0;
   int key1 = 2;
   int key2 = 4;
-  assert(vector_find(&v, (void *)&key0, test_cmp) == 0);
-  assert(vector_find(&v, (void *)&key1, test_cmp) == 1);
-  assert(vector_find(&v, (void *)&key2, test_cmp) == 2);
+  assert(vector_find(&v, (void *)&key0, test_cmp1) == 0);
+  assert(vector_find(&v, (void *)&key1, test_cmp1) == 1);
+  assert(vector_find(&v, (void *)&key2, test_cmp1) == 2);
 
   vector_free(&v, test_delete);
 }
@@ -62,9 +69,9 @@ void test_filter() {
   int key0 = 0;
   int key1 = 2;
   int key2 = 4;
-  assert(vector_find(&out, (void *)&key0, test_cmp) == 0);
-  assert(vector_find(&out, (void *)&key1, test_cmp) == 1);
-  assert(vector_find(&out, (void *)&key2, test_cmp) == 2);
+  assert(vector_find(&out, (void *)&key0, test_cmp1) == 0);
+  assert(vector_find(&out, (void *)&key1, test_cmp1) == 1);
+  assert(vector_find(&out, (void *)&key2, test_cmp1) == 2);
 
   vector_free(&v, test_delete);
   vector_free(&out, test_delete);

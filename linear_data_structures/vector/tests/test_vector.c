@@ -11,7 +11,9 @@ extern void test_filter();
 extern void test_any();
 extern void test_fold();
 
-extern void test_vector_bubble_sort();
+extern int cmp_linear_search(void *x, void *y);
+extern void test_search();
+extern void test_sort();
 
 int main() {
   test_vector_init_zero_size();
@@ -26,10 +28,8 @@ int main() {
   test_vector_set1();
   test_vector_set2();
 
-  test_vector_find1();
-  test_vector_find2();
-  test_vector_find3();
-  test_vector_find4();
+  test_search();
+  test_sort();
 
   test_vector_delete_by_index1();
   test_vector_delete_by_index2();
@@ -50,8 +50,6 @@ int main() {
   test_filter();
   test_any();
   test_fold();
-
-  test_vector_bubble_sort();
 }
 
 void test_vector_init_zero_size() {
@@ -180,79 +178,6 @@ void test_vector_set2() {
   vector_free(&v, test_delete);
 }
 
-int test_cmp(void *x, void *y) {
-  int ix = *(int *)x;
-  int iy = *(int *)y;
-
-  return ix == iy;
-}
-
-void test_vector_find1() {
-  printf("test_vector_find1\n");
-  int args[3] = {0, 1, 2};
-
-  vector_t v;
-  vector_init(&v, 0, sizeof(int));
-
-  vector_push_back(&v, (void *)&args[0]);
-  vector_push_back(&v, (void *)&args[1]);
-  vector_push_back(&v, (void *)&args[2]);
-  int key = 0;
-
-  assert(vector_find(&v, (void *)&key, test_cmp) == 0);
-
-  vector_free(&v, test_delete);
-}
-void test_vector_find2() {
-  printf("test_vector_find2\n");
-  int args[3] = {0, 1, 2};
-
-  vector_t v;
-  vector_init(&v, 0, sizeof(int));
-
-  vector_push_back(&v, (void *)&args[0]);
-  vector_push_back(&v, (void *)&args[1]);
-  vector_push_back(&v, (void *)&args[2]);
-  int key = 1;
-
-  assert(vector_find(&v, (void *)&key, test_cmp) == 1);
-
-  vector_free(&v, test_delete);
-}
-
-void test_vector_find3() {
-  printf("test_vector_find3\n");
-  int args[3] = {0, 1, 2};
-
-  vector_t v;
-  vector_init(&v, 0, sizeof(int));
-
-  vector_push_back(&v, (void *)&args[0]);
-  vector_push_back(&v, (void *)&args[1]);
-  vector_push_back(&v, (void *)&args[2]);
-  int key = 2;
-
-  assert(vector_find(&v, (void *)&key, test_cmp) == 2);
-
-  vector_free(&v, test_delete);
-}
-void test_vector_find4() {
-  printf("test_vector_find4\n");
-  int args[3] = {0, 1, 2};
-
-  vector_t v;
-  vector_init(&v, 0, sizeof(int));
-
-  vector_push_back(&v, (void *)&args[0]);
-  vector_push_back(&v, (void *)&args[1]);
-  vector_push_back(&v, (void *)&args[2]);
-  int key = 3;
-
-  assert(vector_find(&v, (void *)&key, test_cmp) == -1);
-
-  vector_free(&v, test_delete);
-}
-
 void test_vector_delete_by_index1() {
   printf("test_vector_delete_by_index1\n");
   int args[3] = {0, 1, 2};
@@ -271,9 +196,9 @@ void test_vector_delete_by_index1() {
   int key0 = 0;
   int key1 = 1;
   int key2 = 2;
-  assert(vector_find(&v, (void *)&key0, test_cmp) == -1);
-  assert(vector_find(&v, (void *)&key1, test_cmp) == 0);
-  assert(vector_find(&v, (void *)&key2, test_cmp) == 1);
+  assert(vector_find(&v, (void *)&key0, cmp_linear_search) == -1);
+  assert(vector_find(&v, (void *)&key1, cmp_linear_search) == 0);
+  assert(vector_find(&v, (void *)&key2, cmp_linear_search) == 1);
 
   vector_free(&v, test_delete);
 }
@@ -295,9 +220,9 @@ void test_vector_delete_by_index2() {
   int key0 = 0;
   int key1 = 1;
   int key2 = 2;
-  assert(vector_find(&v, (void *)&key1, test_cmp) == -1);
-  assert(vector_find(&v, (void *)&key0, test_cmp) == 0);
-  assert(vector_find(&v, (void *)&key2, test_cmp) == 1);
+  assert(vector_find(&v, (void *)&key1, cmp_linear_search) == -1);
+  assert(vector_find(&v, (void *)&key0, cmp_linear_search) == 0);
+  assert(vector_find(&v, (void *)&key2, cmp_linear_search) == 1);
 
   vector_free(&v, test_delete);
 }
@@ -319,9 +244,9 @@ void test_vector_delete_by_index3() {
   int key0 = 0;
   int key1 = 1;
   int key2 = 2;
-  assert(vector_find(&v, (void *)&key2, test_cmp) == -1);
-  assert(vector_find(&v, (void *)&key0, test_cmp) == 0);
-  assert(vector_find(&v, (void *)&key1, test_cmp) == 1);
+  assert(vector_find(&v, (void *)&key2, cmp_linear_search) == -1);
+  assert(vector_find(&v, (void *)&key0, cmp_linear_search) == 0);
+  assert(vector_find(&v, (void *)&key1, cmp_linear_search) == 1);
 
   vector_free(&v, test_delete);
 }
@@ -343,9 +268,9 @@ void test_vector_delete_by_index4() {
   int key0 = 0;
   int key1 = 1;
   int key2 = 2;
-  assert(vector_find(&v, (void *)&key0, test_cmp) == 0);
-  assert(vector_find(&v, (void *)&key1, test_cmp) == 1);
-  assert(vector_find(&v, (void *)&key2, test_cmp) == 2);
+  assert(vector_find(&v, (void *)&key0, cmp_linear_search) == 0);
+  assert(vector_find(&v, (void *)&key1, cmp_linear_search) == 1);
+  assert(vector_find(&v, (void *)&key2, cmp_linear_search) == 2);
 
   vector_free(&v, test_delete);
 }
@@ -361,16 +286,16 @@ void test_vector_delete_by_value1() {
   vector_push_back(&v, (void *)&args[1]);
   vector_push_back(&v, (void *)&args[2]);
 
-  vector_delete_by_value(&v, (void *)&args[0], test_cmp, test_delete);
+  vector_delete_by_value(&v, (void *)&args[0], cmp_linear_search, test_delete);
 
   assert(v.size == 2);
   assert(vector_is_empty(&v) == 0);
   int key0 = 0;
   int key1 = 1;
   int key2 = 2;
-  assert(vector_find(&v, (void *)&key0, test_cmp) == -1);
-  assert(vector_find(&v, (void *)&key1, test_cmp) == 0);
-  assert(vector_find(&v, (void *)&key2, test_cmp) == 1);
+  assert(vector_find(&v, (void *)&key0, cmp_linear_search) == -1);
+  assert(vector_find(&v, (void *)&key1, cmp_linear_search) == 0);
+  assert(vector_find(&v, (void *)&key2, cmp_linear_search) == 1);
 
   vector_free(&v, test_delete);
 }
@@ -385,16 +310,16 @@ void test_vector_delete_by_value2() {
   vector_push_back(&v, (void *)&args[1]);
   vector_push_back(&v, (void *)&args[2]);
 
-  vector_delete_by_value(&v, (void *)&args[1], test_cmp, test_delete);
+  vector_delete_by_value(&v, (void *)&args[1], cmp_linear_search, test_delete);
 
   assert(v.size == 2);
   assert(vector_is_empty(&v) == 0);
   int key0 = 0;
   int key1 = 1;
   int key2 = 2;
-  assert(vector_find(&v, (void *)&key1, test_cmp) == -1);
-  assert(vector_find(&v, (void *)&key0, test_cmp) == 0);
-  assert(vector_find(&v, (void *)&key2, test_cmp) == 1);
+  assert(vector_find(&v, (void *)&key1, cmp_linear_search) == -1);
+  assert(vector_find(&v, (void *)&key0, cmp_linear_search) == 0);
+  assert(vector_find(&v, (void *)&key2, cmp_linear_search) == 1);
 
   vector_free(&v, test_delete);
 }
@@ -409,16 +334,16 @@ void test_vector_delete_by_value3() {
   vector_push_back(&v, (void *)&args[1]);
   vector_push_back(&v, (void *)&args[2]);
 
-  vector_delete_by_value(&v, (void *)&args[2], test_cmp, test_delete);
+  vector_delete_by_value(&v, (void *)&args[2], cmp_linear_search, test_delete);
 
   assert(v.size == 2);
   assert(vector_is_empty(&v) == 0);
   int key0 = 0;
   int key1 = 1;
   int key2 = 2;
-  assert(vector_find(&v, (void *)&key2, test_cmp) == -1);
-  assert(vector_find(&v, (void *)&key0, test_cmp) == 0);
-  assert(vector_find(&v, (void *)&key1, test_cmp) == 1);
+  assert(vector_find(&v, (void *)&key2, cmp_linear_search) == -1);
+  assert(vector_find(&v, (void *)&key0, cmp_linear_search) == 0);
+  assert(vector_find(&v, (void *)&key1, cmp_linear_search) == 1);
 
   vector_free(&v, test_delete);
 }
@@ -434,16 +359,16 @@ void test_vector_delete_by_value4() {
   vector_push_back(&v, (void *)&args[2]);
 
   int for_delete = 100;
-  vector_delete_by_value(&v, (void *)&for_delete, test_cmp, test_delete);
+  vector_delete_by_value(&v, (void *)&for_delete, cmp_linear_search, test_delete);
 
   assert(v.size == 3);
   assert(vector_is_empty(&v) == 0);
   int key0 = 0;
   int key1 = 1;
   int key2 = 2;
-  assert(vector_find(&v, (void *)&key0, test_cmp) == 0);
-  assert(vector_find(&v, (void *)&key1, test_cmp) == 1);
-  assert(vector_find(&v, (void *)&key2, test_cmp) == 2);
+  assert(vector_find(&v, (void *)&key0, cmp_linear_search) == 0);
+  assert(vector_find(&v, (void *)&key1, cmp_linear_search) == 1);
+  assert(vector_find(&v, (void *)&key2, cmp_linear_search) == 2);
 
   vector_free(&v, test_delete);
 }
@@ -467,10 +392,10 @@ void test_vector_insert_by_index1() {
   int key0 = 0;
   int key1 = 1;
   int key2 = 2;
-  assert(vector_find(&v, (void *)&key0, test_cmp) == 0);
-  assert(vector_find(&v, (void *)&key1, test_cmp) == 2);
-  assert(vector_find(&v, (void *)&key2, test_cmp) == 3);
-  assert(vector_find(&v, (void *)&item, test_cmp) == 1);
+  assert(vector_find(&v, (void *)&key0, cmp_linear_search) == 0);
+  assert(vector_find(&v, (void *)&key1, cmp_linear_search) == 2);
+  assert(vector_find(&v, (void *)&key2, cmp_linear_search) == 3);
+  assert(vector_find(&v, (void *)&item, cmp_linear_search) == 1);
 
   vector_free(&v, test_delete);
 }
@@ -493,10 +418,10 @@ void test_vector_insert_by_index2() {
   int key0 = 0;
   int key1 = 1;
   int key2 = 2;
-  assert(vector_find(&v, (void *)&key0, test_cmp) == 0);
-  assert(vector_find(&v, (void *)&key1, test_cmp) == 1);
-  assert(vector_find(&v, (void *)&key2, test_cmp) == 3);
-  assert(vector_find(&v, (void *)&item, test_cmp) == 2);
+  assert(vector_find(&v, (void *)&key0, cmp_linear_search) == 0);
+  assert(vector_find(&v, (void *)&key1, cmp_linear_search) == 1);
+  assert(vector_find(&v, (void *)&key2, cmp_linear_search) == 3);
+  assert(vector_find(&v, (void *)&item, cmp_linear_search) == 2);
 
   vector_free(&v, test_delete);
 }
@@ -519,10 +444,10 @@ void test_vector_insert_by_index3() {
   int key0 = 0;
   int key1 = 1;
   int key2 = 2;
-  assert(vector_find(&v, (void *)&key0, test_cmp) == 0);
-  assert(vector_find(&v, (void *)&key1, test_cmp) == 1);
-  assert(vector_find(&v, (void *)&key2, test_cmp) == 2);
-  assert(vector_find(&v, (void *)&item, test_cmp) == 3);
+  assert(vector_find(&v, (void *)&key0, cmp_linear_search) == 0);
+  assert(vector_find(&v, (void *)&key1, cmp_linear_search) == 1);
+  assert(vector_find(&v, (void *)&key2, cmp_linear_search) == 2);
+  assert(vector_find(&v, (void *)&item, cmp_linear_search) == 3);
 
   vector_free(&v, test_delete);
 }
@@ -545,10 +470,10 @@ void test_vector_insert_by_index4() {
   int key0 = 0;
   int key1 = 1;
   int key2 = 2;
-  assert(vector_find(&v, (void *)&key0, test_cmp) == 0);
-  assert(vector_find(&v, (void *)&key1, test_cmp) == 1);
-  assert(vector_find(&v, (void *)&key2, test_cmp) == 2);
-  assert(vector_find(&v, (void *)&item, test_cmp) == -1);
+  assert(vector_find(&v, (void *)&key0, cmp_linear_search) == 0);
+  assert(vector_find(&v, (void *)&key1, cmp_linear_search) == 1);
+  assert(vector_find(&v, (void *)&key2, cmp_linear_search) == 2);
+  assert(vector_find(&v, (void *)&item, cmp_linear_search) == -1);
 
   vector_free(&v, test_delete);
 }
@@ -572,10 +497,10 @@ void test_vector_insert_by_index5() {
   int key0 = 0;
   int key1 = 1;
   int key2 = 2;
-  assert(vector_find(&v, (void *)&key0, test_cmp) == 1);
-  assert(vector_find(&v, (void *)&key1, test_cmp) == 2);
-  assert(vector_find(&v, (void *)&key2, test_cmp) == 3);
-  assert(vector_find(&v, (void *)&item, test_cmp) == 0);
+  assert(vector_find(&v, (void *)&key0, cmp_linear_search) == 1);
+  assert(vector_find(&v, (void *)&key1, cmp_linear_search) == 2);
+  assert(vector_find(&v, (void *)&key2, cmp_linear_search) == 3);
+  assert(vector_find(&v, (void *)&item, cmp_linear_search) == 0);
 
   vector_free(&v, test_delete);
 }
