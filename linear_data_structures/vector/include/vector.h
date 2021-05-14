@@ -164,12 +164,12 @@ size_t vector_is_empty(vector_t *v);
  *
  * @param v pointer to vector data structure
  * @param key key for search
- * @param cmp a function that takes two arguments (key and current item of vector). Returns 1 if the elements are
- * equal, otherwise 0
+ * @param cmp a function that takes two arguments (key and current item of
+ * vector). Returns 1 if the elements are equal, otherwise 0
  *
  * @return index of find element Returns -1 if key is not found.
  */
-long long vector_find(vector_t* v, void* key, int (*cmp)(void*, void*));
+long long vector_find(vector_t *v, void *key, int (*cmp)(void *, void *));
 
 #define EQUAL 0
 #define LESS 1
@@ -182,10 +182,13 @@ long long vector_find(vector_t* v, void* key, int (*cmp)(void*, void*));
  *
  * @param v pointer to vector data structure
  * @param key key for search
- * @param cmp a function that takes two arguments (key and current item of vector). Returns EQUAL if the key are equal, returns LESS if key less, returns MORE if key more
+ * @param cmp a function that takes two arguments (key and current item of
+ * vector). Returns EQUAL if the key are equal, returns LESS if key less,
+ * returns MORE if key more
  *
  * @return index of find element Returns -1 if key is not found.
  */
-long long vector_binary_search(vector_t* v, void* key, int (*cmp)(void*, void*));
+long long vector_binary_search(vector_t *v, void *key,
+                               int (*cmp)(void *, void *));
 
 #endif // LINEAR_DATA_STRUCTURES_USING_C_VECTOR_H

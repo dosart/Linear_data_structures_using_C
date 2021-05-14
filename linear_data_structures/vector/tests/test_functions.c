@@ -16,10 +16,10 @@ void test_foreach_function(void *item) {
 }
 
 int test_cmp1(void *x, void *y) {
-    int int_x = *(int *)x;
-    int int_y = *(int *)y;
+  int int_x = *(int *)x;
+  int int_y = *(int *)y;
 
-    return int_x == int_y;
+  return int_x == int_y;
 }
 
 void test_foreach() {

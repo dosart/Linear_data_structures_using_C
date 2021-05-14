@@ -359,7 +359,8 @@ void test_vector_delete_by_value4() {
   vector_push_back(&v, (void *)&args[2]);
 
   int for_delete = 100;
-  vector_delete_by_value(&v, (void *)&for_delete, cmp_linear_search, test_delete);
+  vector_delete_by_value(&v, (void *)&for_delete, cmp_linear_search,
+                         test_delete);
 
   assert(v.size == 3);
   assert(vector_is_empty(&v) == 0);

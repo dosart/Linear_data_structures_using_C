@@ -150,26 +150,25 @@ long long vector_find(vector_t *v, void *key, int (*cmp)(void *, void *)) {
   return -1;
 }
 
-long long vector_binary_search(vector_t* v, void* key, int(*cmp)(void*, void*))
-{
-    size_t low = 0;
-    size_t hight = v->size - 1;
+long long vector_binary_search(vector_t *v, void *key,
+                               int (*cmp)(void *, void *)) {
+  size_t low = 0;
+  size_t hight = v->size - 1;
 
-    size_t mid = 0;
-    while (low <= hight)
-    {
-        mid = low + ((hight - low) / 2);
+  size_t mid = 0;
+  while (low <= hight) {
+    mid = low + ((hight - low) / 2);
 
-        void* item = vector_get(v, mid);
-        int result = cmp(key, item);
-        //if key == v->data[mid]
-        if (result == EQUAL)
-            return mid;
-        //if key < v->data[mid]
-        else if (result == LESS)
-            hight = mid - 1;
-        else
-            low = mid + 1;
-    }
-    return -1;
+    void *item = vector_get(v, mid);
+    int result = cmp(key, item);
+    // if key == v->data[mid]
+    if (result == EQUAL)
+      return mid;
+    // if key < v->data[mid]
+    else if (result == LESS)
+      hight = mid - 1;
+    else
+      low = mid + 1;
+  }
+  return -1;
 }
