@@ -3,12 +3,11 @@
 
 #include <assert.h>
 
-
-typedef struct test_item {
+ typedef struct search_test_item {
     long long (*search)(vector_t *, void *, int(*cmp)(void*, void*));
     int(*cmp)(void*, void*);
     char* message;
-} test_item;
+} search_test_item;
 
 int cmp_linear_search(void *x, void *y) {
     int int_x = *(int *)x;
@@ -33,37 +32,37 @@ void test_delete1(void *key) {
     *(int *)key = 0;
 }
 
-void test_vector_search1(test_item* item);
-void test_vector_search2(test_item* item);
-void test_vector_search3(test_item* item);
-void test_vector_search4(test_item* item);
+void test_vector_search1(search_test_item* item);
+void test_vector_search2(search_test_item* item);
+void test_vector_search3(search_test_item* item);
+void test_vector_search4(search_test_item* item);
 
 void test_search() {
 
-    struct test_item binary_search_item =
+    struct search_test_item binary_search_item =
             {
                 .search = vector_binary_search,
                 .cmp = cmp_binary_search,
                 .message = "Binary_search"
             };
 
-    struct test_item linear_search_item =
+    struct search_test_item linear_search_item =
             {
                     .search = vector_find,
                     .cmp = cmp_linear_search,
                     .message = "Linear_search"
             };
 
-    struct test_item test_items[] = {binary_search_item, linear_search_item};
+    struct search_test_item search_test_items[] = {binary_search_item, linear_search_item};
     for (unsigned short i = 0; i < 2; ++i) {
-        test_vector_search1(&test_items[i]);
-        test_vector_search2(&test_items[i]);
-        test_vector_search3(&test_items[i]);
-        test_vector_search4(&test_items[i]);
+        test_vector_search1(&search_test_items[i]);
+        test_vector_search2(&search_test_items[i]);
+        test_vector_search3(&search_test_items[i]);
+        test_vector_search4(&search_test_items[i]);
     }
 }
 
-void test_vector_search1(test_item* item) {
+void test_vector_search1(search_test_item* item) {
     printf("test_vector_find1 %s\n", item->message);
     int args[3] = {0, 1, 2};
 
@@ -79,7 +78,7 @@ void test_vector_search1(test_item* item) {
 
     vector_free(&v, test_delete1);
 }
-void test_vector_search2(test_item* item) {
+void test_vector_search2(search_test_item* item) {
     printf("test_vector_find2. %s\n", item->message);
     int args[3] = {0, 1, 2};
 
@@ -96,7 +95,7 @@ void test_vector_search2(test_item* item) {
     vector_free(&v, test_delete1);
 }
 
-void test_vector_search3(test_item* item) {
+void test_vector_search3(search_test_item* item) {
     printf("test_vector_find3 %s\n", item->message);
     int args[3] = {0, 1, 2};
 
@@ -113,7 +112,7 @@ void test_vector_search3(test_item* item) {
     vector_free(&v, test_delete1);
 }
 
-void test_vector_search4(test_item* item) {
+void test_vector_search4(search_test_item* item) {
     printf("test_vector_find4 %s\n", item->message);
     int args[3] = {0, 1, 2};
 
