@@ -1,10 +1,3 @@
-//
-// Created by dosart on 6/12/21.
-//
-
-#ifndef UNTITLED1__STACK_H_
-#define UNTITLED1__STACK_H_
-
 /*!
 @file
 @brief  Header file for stack
@@ -132,6 +125,3 @@ void* stack_peek(stack_t *s);
 void stack_pop(stack_t *s, void (*deleter)(void *));
 
 #endif // LINEAR_DATA_STRUCTURES_USING_C_STACK_H
-
-#endif //UNTITLED1__STACK_H_
-
