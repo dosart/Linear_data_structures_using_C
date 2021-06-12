@@ -33,3 +33,14 @@ Implementation of classic linear data structures
 - [x] vector_filter - add to a new array elements whose predicate returns true
 - [x] vector_fold - converts a vector to a single value
 - [x] vector_any -  return true if at least one element of an iterable is true else false
+
+
+## Stack (using linked list)
+
+- [x] stack_push - inserts a new element at the top of the stack, above its current top element
+- [x] stack_pop - removes the element on top of the stack, effectively reducing its size by one
+- [x] stack_peek - returns the next character in the input sequence, without extracting it
+- [x] stack_size - returns count of elements
+- [x] stack_is_emtry = return 1 if stack is empty, else returns 0 
+
+
