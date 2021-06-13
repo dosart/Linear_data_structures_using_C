@@ -43,4 +43,8 @@ Implementation of classic linear data structures
 - [x] stack_size - returns count of elements
 - [x] stack_is_emtry = return 1 if stack is empty, else returns 0 
 
+### Higher-order functions (using macros)
+
+- [x] STACK_FOREACH - applies a function to each element of the array
+
 
