@@ -124,4 +124,12 @@ void* stack_peek(stack_t *s);
  */
 void stack_pop(stack_t *s, void (*deleter)(void *));
 
+#define STACK_FOREACH(stack, function) { \
+  stack_item_t* curr = stack->first;      \
+  while(curr) {                           \
+    function(curr->data);                 \
+    curr = curr->next;                  \
+  }\
+}
+
 #endif // LINEAR_DATA_STRUCTURES_USING_C_STACK_H
