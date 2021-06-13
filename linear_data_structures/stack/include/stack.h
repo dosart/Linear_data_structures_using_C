@@ -4,6 +4,7 @@
 
 This file contains the definition of the data structure stack
 */
+
 #ifndef LINEAR_DATA_STRUCTURES_USING_C_STACK_H
 #define LINEAR_DATA_STRUCTURES_USING_C_STACK_H
 

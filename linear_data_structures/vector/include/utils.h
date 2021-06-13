@@ -1,6 +1,7 @@
-//
-// Created by dosart on 03.05.2021.
-//
+/*!
+@file
+@brief  Header file for utils functions
+*/
 
 #ifndef LINEAR_DATA_STRUCTURES_USING_C_UTILS_H
 #define LINEAR_DATA_STRUCTURES_USING_C_UTILS_H

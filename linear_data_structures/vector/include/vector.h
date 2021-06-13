@@ -4,6 +4,7 @@
 
 This file contains the definition of the data structure dynamic array
 */
+
 #ifndef LINEAR_DATA_STRUCTURES_USING_C_VECTOR_H
 #define LINEAR_DATA_STRUCTURES_USING_C_VECTOR_H
 
@@ -14,7 +15,7 @@ This file contains the definition of the data structure dynamic array
 /**
  * \defgroup vector Dynamic array
  *
- * @brief Implementation dynamic array (vector)
+ * @brief Implementation dynamic array (vector).
  *
  * @authors Dosart
  *
@@ -22,7 +23,7 @@ This file contains the definition of the data structure dynamic array
  *
  * @date 25 april 2021
  *
- * @warning This structure created only for educational goals
+ * @warning This structure created only for educational goals.
  */
 typedef struct vector_t {
   void *data;
@@ -34,14 +35,14 @@ typedef struct vector_t {
 /**
  * @ingroup vector
  *
- * @brief Construct new vector data structure
+ * @brief Construct new vector data structure.
  *
- * @param v pointer to vector data structure
- * @param capacity the size of the storage space currently allocated for the
+ * @param v Pointer to vector data structure.
+ * @param capacity The size of the storage space currently allocated for the
  * vector, expressed in terms of elements. if capacity == 0, set capacity = 16
- * on first addition
+ * on first addition.
  *
- * @param elem_size Size of vector item
+ * @param elem_size Size of vector item.
  */
 void vector_init(vector_t *v, size_t capacity, size_t elem_size);
 
@@ -49,29 +50,26 @@ void vector_init(vector_t *v, size_t capacity, size_t elem_size);
  * @ingroup vector
  *
  * @brief Implementation null object pattern.
- *
- * Return not valid vector
- *
  */
 void vector_null(vector_t *v);
 
 /**
  * @ingroup vector
  *
- * @brief Free memory dynamic array
+ * @brief Free memory dynamic array.
  *
- * @param v pointer to vector
- * @param deleter function to remove an item
+ * @param v Pointer to vector.
+ * @param deleter Function to remove an item.
  */
 void vector_free(vector_t *v, void (*deleter)(void *));
 
 /**
  * @ingroup vector
  *
- * @brief Adds an item to the end
+ * @brief Adds an item to the end.
  *
- * @param v pointer to vector data structure
- * @param elem element for add
+ * @param v Pointer to vector data structure.
+ * @param elem Element for add.
  */
 void vector_push_back(vector_t *v, void *elem);
 
@@ -80,21 +78,21 @@ void vector_push_back(vector_t *v, void *elem);
  *
  * @brief Adds an item  by index. If index > size then don't add.
  *
- * @param v pointer to vector data structure
- * @param index index for added
- * @param elem element for add
+ * @param v Pointer to vector data structure.
+ * @param index Index for added.
+ * @param elem Element for add.
  */
 void vector_insert_by_index(vector_t *v, size_t index, void *elem);
 
 /**
  * @ingroup vector
  *
- * @brief Delete item by value, shifting all trailing elements left
+ * @brief Delete item by value, shifting all trailing elements left.
  *
- * @param v pointer to vector data structure
- * @param index index for delete
- * @param cmp a function that takes two arguments. Returns 1 if the elements are
- * @param deleter function to remove an item
+ * @param v Pointer to vector data structure.
+ * @param key Value for delete.
+ * @param cmp The function that takes two arguments. Returns 1 if the elements are.
+ * @param deleter The function to remove an item.
  */
 void vector_delete_by_value(vector_t *v, void *key, int (*cmp)(void *, void *),
                             void (*deleter)(void *));
@@ -102,70 +100,70 @@ void vector_delete_by_value(vector_t *v, void *key, int (*cmp)(void *, void *),
 /**
  * @ingroup vector
  *
- * @brief Delete item at index, shifting all trailing elements left
+ * @brief Delete item at index, shifting all trailing elements left.
  *
- * @param v pointer to vector data structure
- * @param index index for delete
- * @param deleter function to remove an item
+ * @param v Pointer to vector data structure.
+ * @param index Index for delete.
+ * @param deleter Function to remove an item.
  */
 void vector_delete_by_index(vector_t *v, size_t index, void (*deleter)(void *));
 
 /**
  * @ingroup vector
  *
- * @brief Returns item at given index
+ * @brief Returns item at given index.
  *
- * @param v pointer to vector data structure
- * @param elem element for add
+ * @param v Pointer to vector data structure.
+ * @param elem Element for add.
  *
- * @return item at given index
+ * @return item At given index.
  */
 void *vector_get(vector_t *v, size_t index);
 
 /**
  * @ingroup vector
  *
- * @brief Change element by index
+ * @brief Change element by index.
  *
- * @param v pointer to vector data structure
- * @param index index for change element
- * @param elem element for change
+ * @param v Pointer to vector data structure.
+ * @param index Index for change element.
+ * @param elem Element for change.
  *
- * @return item at given index
+ * @return item At given index.
  */
 void vector_set(vector_t *v, size_t index, void *elem);
 
 /**
  * @ingroup vector
  *
- * @brief Returns size of vector (expressed in terms of elements)
+ * @brief Returns size of vector (expressed in terms of elements).
  *
- * @param v pointer to vector data structure
+ * @param v Pointer to vector data structure.
  *
- * @return size of vector
+ * @return size Size of vector.
  */
 size_t vector_size(vector_t *v);
 
 /**
  * @ingroup vector
  *
- * @brief Returns true if vector is empty (expressed in terms of elements)
+ * @brief Returns true if vector is empty (expressed in terms of elements).
  *
- * @param v pointer to vector data structure
+ * @param v Pointer to vector data structure.
  *
- * @return 1 if size == 0 else 0
+ * @return size_t  1 if size == 0 else 0.
  */
 size_t vector_is_empty(vector_t *v);
 
 /**
  * @ingroup vector
  *
- * @brief Implementation linear search
+ * @brief Implementation linear search.
  *
- * @param v pointer to vector data structure
- * @param key key for search
- * @param cmp a function that takes two arguments (key and current item of
- * vector). Returns 1 if the elements are equal, otherwise 0
+ * @param v Pointer to vector data structure.
+ * @param key Key for search
+ * @param cmp A function that takes two arguments (key and current item of
+ * vector). Returns 1 if the elements are equal, otherwise 0.
  *
  * @return index of find element Returns -1 if key is not found.
  */
@@ -180,11 +178,11 @@ long long vector_find(vector_t *v, void *key, int (*cmp)(void *, void *));
  *
  * @brief Implementation binary search
  *
- * @param v pointer to vector data structure
- * @param key key for search
- * @param cmp a function that takes two arguments (key and current item of
+ * @param v Pointer to vector data structure
+ * @param key Key for search
+ * @param cmp A function that takes two arguments (key and current item of
  * vector). Returns EQUAL if the key are equal, returns LESS if key less,
- * returns MORE if key more
+ * returns MORE if key more.
  *
  * @return index of find element Returns -1 if key is not found.
  */
