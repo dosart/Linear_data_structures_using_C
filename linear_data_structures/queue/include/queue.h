@@ -100,7 +100,18 @@ void queue_enqueue(queue_t *q, void *item);
  *
  * @param s Pointer to queue_t data structure.
  */
-void queue_dequeue(queue_t *q, void *item);
+void queue_dequeue(queue_t *q);
+
+/**
+ * @ingroup queue_t
+ *
+ * @brief Returns value at front of queue, don't remove from queue.
+ *
+ * @param s Pointer to queue_t data structure.
+ *
+ * @returns value at front of queue.
+ */
+void* queue_peek(queue_t *q);
 
 #endif //QUEUE_INCLUDE_QUEUE_H_
 

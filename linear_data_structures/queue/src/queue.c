@@ -61,6 +61,13 @@ static void set_item(queue_t *q, size_t index, void *item) {
   memcpy(((char *) q->data) + index*q->elem_size, item, q->elem_size);
 }
 
+void *queue_peek(queue_t *q) {
+  if (q && !queue_is_empty(q)) {
+    return get_item(q, q->front);
+  }
+  return NULL;
+}
+
 //void queue_dequeue(queue_t *q, void *item) {
 //  q = NULL;
 //  item = NULL;
