@@ -68,7 +68,15 @@ void *queue_peek(queue_t *q) {
   return NULL;
 }
 
-//void queue_dequeue(queue_t *q, void *item) {
-//  q = NULL;
-//  item = NULL;
-//}
+void queue_dequeue(queue_t *q, void (*deleter)(void *)) {
+  if (q) {
+    if (deleter) {
+      deleter(get_item(q, q->front));
+    }
+    if (!queue_is_empty(q)) {
+      q->front = q->front + 1%q->max_size;
+      --q->count;
+    }
+  }
+}
+

@@ -96,11 +96,12 @@ void queue_enqueue(queue_t *q, void *item);
 /**
  * @ingroup queue_t
  *
- * @brief Returns value at front of queue, and removes from queue.
+ * @brief  Removes first element from queue.
  *
  * @param s Pointer to queue_t data structure.
+ * @param deleter Deleter function to remove an item (if NULL don't remove).
  */
-void queue_dequeue(queue_t *q);
+void queue_dequeue(queue_t *q, void (*deleter)(void *));
 
 /**
  * @ingroup queue_t
