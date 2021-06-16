@@ -47,4 +47,11 @@ Implementation of classic linear data structures
 
 - [x] STACK_FOREACH - applies a function to each element of the array
 
+## Queue (using fixed-sized array)
 
+- [x] queue-enqueue(value) - adds item at end of available storage
+- [x] queue_dequeue() - removes first element from queue
+- [x] queue_count() - returns count of elements of queue
+- [x] queue_is_full() - returns true if queue is ful
+- [x] queue_free() - free memory in queue
+- [x] queue_peek() - returns value at front of queue, don't remove from queue 
