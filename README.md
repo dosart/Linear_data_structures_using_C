@@ -17,6 +17,7 @@ Implementation of classic linear data structures
 - [x] vector_delete_by_index - delete item at index, shifting all trailing elements left
 - [x] vector_delete_by_value - looks for value and removes index holding it (even if in multiple places)
 - [x] vector_insert_by_index - inserts item at index, shifts that index's value and trailing elements to the right
+- [x] vector_free - frees memory of vector
 
 ### Search functions
 
@@ -41,7 +42,8 @@ Implementation of classic linear data structures
 - [x] stack_pop - removes the element on top of the stack, effectively reducing its size by one
 - [x] stack_peek - returns the next character in the input sequence, without extracting it
 - [x] stack_size - returns count of elements
-- [x] stack_is_emtry = return 1 if stack is empty, else returns 0 
+- [x] stack_is_emtry = returnы 1 if stack is empty, else returns 0
+- [x] stack_free -frees memory of stack
 
 ### Higher-order functions (using macros)
 
@@ -53,5 +55,5 @@ Implementation of classic linear data structures
 - [x] queue_dequeue() - removes first element from queue
 - [x] queue_count() - returns count of elements of queue
 - [x] queue_is_full() - returns true if queue is ful
-- [x] queue_free() - free memory in queue
+- [x] queue_free() - frees memory of queue
 - [x] queue_peek() - returns value at front of queue, don't remove from queue 
